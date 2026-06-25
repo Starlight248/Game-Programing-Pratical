@@ -1,0 +1,55 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\yonga\\Documents\\Game-Programing-Pratical\\Game-Programing-Pratical\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FA47B38A-5FD4-425C-8C3B-6AC36AA3D721}|Game-Programing-Pratical\\Game-Programing-Pratical.vcxproj|E:\\yonga\\Documents\\Game-Programing-Pratical\\Game-Programing-Pratical\\Game-Programing-Pratical\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{FA47B38A-5FD4-425C-8C3B-6AC36AA3D721}|Game-Programing-Pratical\\Game-Programing-Pratical.vcxproj|solutionrelative:Game-Programing-Pratical\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "E:\\yonga\\Documents\\Game-Programing-Pratical\\Game-Programing-Pratical\\Game-Programing-Pratical\\main.cpp",
+              "RelativeDocumentMoniker": "Game-Programing-Pratical\\main.cpp",
+              "ToolTip": "E:\\yonga\\Documents\\Game-Programing-Pratical\\Game-Programing-Pratical\\Game-Programing-Pratical\\main.cpp",
+              "RelativeToolTip": "Game-Programing-Pratical\\main.cpp",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-06-24T08:18:23.855Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
