@@ -1,21 +1,65 @@
 //	Ask the compiler to include minimal header files for our program.
 #define WIN32_LEAN_AND_MEAN
+#include<d3d9.h>
 #include <Windows.h>
 #include<iostream>
 
+#pragma comment(lib,"d3d9.lib")
+
 using namespace std;
+//Global Var
+//--------------------------------------------------------------------
+HWND g_hWnd = NULL; //	Window handle
+WNDCLASS wndClass;
+IDirect3DDevice9* d3dDevice;
+
+int red = 0;
+int green = 0;
+int blue = 0;
+
+//--------------------------------------------------------------------
+LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+bool createDirectX();
+void createWindow();
+void cleanUpDirectX();
+void cleanupWindow();
+void render();
+bool windowIsRunning();
 //--------------------------------------------------------------------
 
-//	Window handle
-HWND g_hWnd = NULL;
-WNDCLASS wndClass;
-//--------------------------------------------------------------------
+
+/*
+Return True if DirectX Succesfully created, else false
+*/
+bool createDirectX() {
+    //	Define how the screen presents.
+    D3DPRESENT_PARAMETERS d3dPP;
+    ZeroMemory(&d3dPP, sizeof(d3dPP));
+    //	Define Direct3D 9.
+    IDirect3D9* direct3D9 = Direct3DCreate9(D3D_SDK_VERSION);
+
+    //	Refer to Direct3D 9 documentation for the meaning of the members.
+    d3dPP.Windowed = true;
+    d3dPP.SwapEffect = D3DSWAPEFFECT_DISCARD;
+    d3dPP.BackBufferFormat = D3DFMT_X8R8G8B8;
+    d3dPP.BackBufferCount = 1;
+    d3dPP.BackBufferWidth = 400;
+    d3dPP.BackBufferHeight = 300;
+    d3dPP.hDeviceWindow = g_hWnd;
+
+
+
+    //	Create a Direct3D 9 device.
+    HRESULT hr = direct3D9->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, g_hWnd, D3DCREATE_SOFTWARE_VERTEXPROCESSING, &d3dPP, &d3dDevice);
+    if (FAILED(hr))
+        return false;
+    else
+    {
+        return true;
+    }
+}
 
 void createWindow() {
-    /*
-    Step 1
-    Define and Register a Window.
-*/
 
 //	Window's structure
     
@@ -28,7 +72,7 @@ void createWindow() {
     wndClass.hCursor = LoadCursor(NULL, IDC_ARROW);
     wndClass.hInstance = GetModuleHandle(NULL);	//	GetModuleHandle(NULL);
     wndClass.lpfnWndProc = WindowProcedure;
-    wndClass.lpszClassName = "My Window";
+    wndClass.lpszClassName = "Spy Family";
     wndClass.style = CS_HREDRAW | CS_VREDRAW;
 
     //	Register the window.
@@ -53,11 +97,32 @@ void createWindow() {
     return;
 
 }
+
+void cleanUpDirectX() {
+    d3dDevice->Release();//	Release the device when exiting.
+    d3dDevice = NULL;//	Reset pointer to NULL, a good practice.
+}
+
 void cleanupWindow() {
     //	Free up the memory.
     UnregisterClass(wndClass.lpszClassName, GetModuleHandle(NULL));
     return;
 };
+
+void render() {
+    //	Clear the back buffer.
+    d3dDevice->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(red, green, blue), 1.0f, 0);
+
+    //	Begin the scene
+    d3dDevice->BeginScene();
+
+    //	End the scene
+    d3dDevice->EndScene();
+
+    //	Present the back buffer to screen
+    d3dDevice->Present(NULL, NULL, NULL, NULL);
+
+}
 
 bool windowIsRunning() {
     MSG msg;
@@ -100,7 +165,6 @@ bool windowIsRunning() {
     }
     return false;
 }
-//--------------------------------------------------------------------
 
 //	Window Procedure, for event handling
 LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -121,7 +185,28 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
         case 0x1B:
             PostQuitMessage(0);
             break;
+            //r
+        case 0x52:
+            red+=10;
+            break;
+            //g
+        case 0x47:
+            green += 10;
+            break;
+            //b
+        case 0x42:
+            blue += 10;
+            break;
+            //0
+        case 0x30:
+            red = 0;
+            blue = 0;
+            green = 0;
+            break;
+        
+
         }
+        break;
         /*
             Write your code here...
         */
@@ -134,27 +219,31 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 }
 
 
+//--------------------------------------------------------------------
+
 //	use int main if you want to have a console to print out message
 //int main()
-
 //	use WinMain if you don't want the console
                     //ID Nunber,		obs ID number of parent, command line parameter,
 int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
 
     createWindow();
-
+    bool isDirectXCreated = createDirectX();
+    
 
     //TODO
-    while (windowIsRunning())
+    while (windowIsRunning()&& isDirectXCreated)
     {
         // Do something… 
         //Game->getInput()
         //Game->Physics()
         //Game->render()
+        render();
         
     }
     cleanupWindow();
+    cleanUpDirectX();
 
 
 
