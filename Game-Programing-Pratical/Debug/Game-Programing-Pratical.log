@@ -1,1 +1,0 @@
-﻿D:\Visual Studio 2026\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(517,5): error MSB8041: MFC libraries are required for this project. Install them from the Visual Studio installer (Individual Components tab) for any toolsets and architectures being used.

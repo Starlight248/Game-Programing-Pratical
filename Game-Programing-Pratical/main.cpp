@@ -4,18 +4,246 @@
 #include <Windows.h>
 #include<iostream>
 
+
 #pragma comment(lib,"d3d9.lib")
 
 using namespace std;
+//Class
+//--------------------------------------------------------------------
+
+enum class KeyCode
+{
+    LEFT_MOUSE_BUTTON = 0x01,
+    RIGHT_MOUSE_BUTTON = 0x02,
+    CONTROL_BREAK = 0x03, // Cancel (Ctrl+Pause)
+    MIDDLE_MOUSE_BUTTON = 0x04,
+    X1_MOUSE_BUTTON = 0x05,
+    X2_MOUSE_BUTTON = 0x06,
+    BACKSPACE = 0x08,
+    TAB = 0x09,
+    CLEAR = 0x0C,
+    ENTER = 0x0D, // Return
+    SHIFT = 0x10,
+    CONTROL = 0x11, // Ctrl
+    ALT = 0x12, // Menu
+    PAUSE = 0x13,
+    CAPS_LOCK = 0x14,
+    ESCAPE = 0x1B, // Esc
+    SPACE = 0x20,
+    PAGE_UP = 0x21,
+    PAGE_DOWN = 0x22,
+    END = 0x23,
+    HOME = 0x24,
+    LEFT_ARROW = 0x25,
+    UP_ARROW = 0x26,
+    RIGHT_ARROW = 0x27,
+    DOWN_ARROW = 0x28,
+    SELECT = 0x29,
+    PRINT = 0x2A,
+    EXECUTE = 0x2B,
+    PRINT_SCREEN = 0x2C,
+    INSERT = 0x2D,
+    DELETE_KEY = 0x2E,
+    HELP = 0x2F,
+    KEY_0 = 0x30,
+    KEY_1 = 0x31,
+    KEY_2 = 0x32,
+    KEY_3 = 0x33,
+    KEY_4 = 0x34,
+    KEY_5 = 0x35,
+    KEY_6 = 0x36,
+    KEY_7 = 0x37,
+    KEY_8 = 0x38,
+    KEY_9 = 0x39,
+    KEY_A = 0x41,
+    KEY_B = 0x42,
+    KEY_C = 0x43,
+    KEY_D = 0x44,
+    KEY_E = 0x45,
+    KEY_F = 0x46,
+    KEY_G = 0x47,
+    KEY_H = 0x48,
+    KEY_I = 0x49,
+    KEY_J = 0x4A,
+    KEY_K = 0x4B,
+    KEY_L = 0x4C,
+    KEY_M = 0x4D,
+    KEY_N = 0x4E,
+    KEY_O = 0x4F,
+    KEY_P = 0x50,
+    KEY_Q = 0x51,
+    KEY_R = 0x52,
+    KEY_S = 0x53,
+    KEY_T = 0x54,
+    KEY_U = 0x55,
+    KEY_V = 0x56,
+    KEY_W = 0x57,
+    KEY_X = 0x58,
+    KEY_Y = 0x59,
+    KEY_Z = 0x5A,
+    LEFT_WINDOWS = 0x5B,
+    RIGHT_WINDOWS = 0x5C,
+    NUMPAD_0 = 0x60,
+    NUMPAD_1 = 0x61,
+    NUMPAD_2 = 0x62,
+    NUMPAD_3 = 0x63,
+    NUMPAD_4 = 0x64,
+    NUMPAD_5 = 0x65,
+    NUMPAD_6 = 0x66,
+    NUMPAD_7 = 0x67,
+    NUMPAD_8 = 0x68,
+    NUMPAD_9 = 0x69,
+    MULTIPLY = 0x6A, // *
+    ADD_KEY = 0x6B, // +
+    SEPARATOR = 0x6C,
+    SUBTRACT = 0x6D, // -
+    DECIMAL = 0x6E, // .
+    DIVIDE = 0x6F, // /
+    F1 = 0x70,
+    F2 = 0x71,
+    F3 = 0x72,
+    F4 = 0x73,
+    F5 = 0x74,
+    F6 = 0x75,
+    F7 = 0x76,
+    F8 = 0x77,
+    F9 = 0x78,
+    F10 = 0x79,
+    F11 = 0x7A,
+    F12 = 0x7B,
+    NUM_LOCK = 0x90,
+    SCROLL_LOCK = 0x91,
+    LEFT_SHIFT = 0xA0,
+    RIGHT_SHIFT = 0xA1,
+    LEFT_CONTROL = 0xA2,
+    RIGHT_CONTROL = 0xA3,
+    LEFT_ALT = 0xA4,
+    RIGHT_ALT = 0xA5
+};
+class RGBColor {
+private:
+    int red;
+    int green;
+    int blue;
+    int last_red;
+    int last_blue;
+    int last_green;
+
+public:
+    RGBColor() :red(0), blue(0), green(0) ,last_red(-1),last_blue(-1),last_green(-1){
+    }
+    RGBColor(int r, int g, int b) : red(r), green(g), blue(b), last_red(-1), last_blue(-1), last_green(-1) {
+        checkCrossing(&red);
+        checkCrossing(&blue);
+        checkCrossing(&green);
+    }
+
+    const int getRedValue() {
+        return this->red;
+
+    }
+
+    const int getBlueValue() {
+        return this->blue;
+    }
+
+    const int getGreenValue() {
+        return this->green;
+    }
+
+    void setRed(int red) {
+        this->red = red;
+        checkCrossing(&red);
+    }
+
+    void setBlue(int blue) {
+        this->blue = blue;
+        checkCrossing(&blue);
+    }
+
+    void setGreen(int green) {
+        this->green = green;
+        checkCrossing(&green);
+    }
+    void increaseColorValue(int* color_address, int* last_color_address, int value) {
+        *last_color_address = *color_address;
+        *color_address += value;
+        checkCrossing(color_address);
+    }
+
+    void decreaseColorValue(int* color_address, int* last_color_address, int value) {
+        *last_color_address = *color_address;
+        *color_address -= value;
+        checkCrossing(color_address);
+    }
+
+
+    void changeGreen(int value) {
+        bool increase = checkIncreasement(&(this->green), value);
+        if (increase) increaseColorValue(&(this->green), &(this->last_green), value);
+        else if (!increase) decreaseColorValue(&(this->green), &(this->last_green), value);
+    }
+
+    void changeRed(int value) {
+        bool increase = checkIncreasement(&(this->red), value);
+        if (increase) increaseColorValue(&(this->red), &(this->last_red), value);
+        else if (!increase) decreaseColorValue(&(this->red), &(this->last_red), value);
+    }
+
+    void changeBlue(int value) {
+        bool increase = checkIncreasement(&(this->blue), value);
+        if (increase) increaseColorValue(&(this->blue), &(this->last_blue), value);
+        else if (!increase) decreaseColorValue(&(this->blue), &(this->last_blue), value);
+    }
+
+    int* getLastColorAddress(int* color_address) {
+        if (color_address == &(this->red)) return &(this->last_red);
+        else if (color_address == &(this->blue)) return &(this->last_blue);
+        else if (color_address == &(this->green)) return &(this->last_green);
+
+    }
+
+    void checkCrossing(int* color_address) {
+        int* last_color_address = getLastColorAddress(color_address);
+        if (*color_address < 0) {
+            *color_address = 0;
+            *last_color_address = -1;
+        }
+        else if (*color_address > 255) {
+            *color_address = 255;
+            *last_color_address = 256;
+        }
+    }
+
+    /*
+    return True if next change is increase
+    *
+    */
+    bool checkIncreasement(int* color_address, int value){
+        int* last_color_address = getLastColorAddress(color_address);
+        if (*color_address > *last_color_address) return true;
+        else if (*color_address < *last_color_address) return false;
+    }
+
+
+
+
+
+
+};
 //Global Var
 //--------------------------------------------------------------------
+
 HWND g_hWnd = NULL; //	Window handle
 WNDCLASS wndClass;
 IDirect3DDevice9* d3dDevice;
 
-int red = 0;
-int green = 0;
-int blue = 0;
+RGBColor rgb = RGBColor();
+
+
+
+
+
 
 //--------------------------------------------------------------------
 LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
@@ -25,7 +253,424 @@ void cleanUpDirectX();
 void cleanupWindow();
 void render();
 bool windowIsRunning();
+void pingpong();
+void whenKeyPressed();
+enum class KeyCode;
 //--------------------------------------------------------------------
+
+void whenKeyPressed(KeyCode pressedKey) {
+    switch (pressedKey) {
+    case KeyCode::ESCAPE:
+        PostQuitMessage(0);
+        break;
+    case KeyCode::KEY_R:
+        rgb.changeRed(10);
+        break;
+    case KeyCode::KEY_B:
+        rgb.changeBlue(10);
+        break;
+    case KeyCode::KEY_G:
+        rgb.changeGreen(10);
+        break;
+    }
+
+}
+
+void pingpong() {}
+//	Window Procedure, for event handling
+LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+    KeyCode pressedKey;
+    switch (message)
+    {
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        break;
+
+    case WM_KEYDOWN:
+        switch (wParam) {
+
+        case 0x01: 
+			pressedKey = KeyCode::LEFT_MOUSE_BUTTON;
+            break; // VK_LBUTTON: Left mouse button
+        case 0x02: 
+			pressedKey = KeyCode::RIGHT_MOUSE_BUTTON;
+            break; // VK_RBUTTON: Right mouse button
+        case 0x03: 
+			pressedKey = KeyCode::CONTROL_BREAK;
+            break; // VK_CANCEL: Control-break processing
+        case 0x04: 
+			pressedKey = KeyCode::MIDDLE_MOUSE_BUTTON;
+            break; // VK_MBUTTON: Middle mouse button (three-button mouse)
+        case 0x05: 
+			pressedKey = KeyCode::X1_MOUSE_BUTTON;
+            break; // VK_XBUTTON1: X1 mouse button
+        case 0x06: 
+			pressedKey = KeyCode::X2_MOUSE_BUTTON;
+            break; // VK_XBUTTON2: X2 mouse button
+        case 0x08: 
+			pressedKey = KeyCode::BACKSPACE;
+            break; // VK_BACK: BACKSPACE key
+        case 0x09: 
+			pressedKey = KeyCode::TAB;
+            break; // VK_TAB: TAB key
+        case 0x0C: 
+			pressedKey = KeyCode::CLEAR;
+            break; // VK_CLEAR: CLEAR key
+        case 0x0D: 
+			pressedKey = KeyCode::ENTER;
+            break; // VK_RETURN: ENTER key
+        case 0x10: 
+			pressedKey = KeyCode::SHIFT;
+            break; // VK_SHIFT: SHIFT key
+        case 0x11: 
+			pressedKey = KeyCode::CONTROL;
+            break; // VK_CONTROL: CTRL key
+        case 0x12: 
+			pressedKey = KeyCode::ALT;
+            break; // VK_MENU: ALT key
+        case 0x13: 
+			pressedKey = KeyCode::PAUSE;
+            break; // VK_PAUSE: PAUSE key
+        case 0x14: 
+			pressedKey = KeyCode::CAPS_LOCK;
+            break; // VK_CAPITAL: CAPS LOCK key
+        case 0x1B:        // VK_ESCAPE: ESC key
+            pressedKey = KeyCode::ESCAPE;
+            break;
+        case 0x20: 
+			pressedKey = KeyCode::SPACE;
+            break; // VK_SPACE: SPACEBAR
+        case 0x21: 
+			pressedKey = KeyCode::PAGE_UP;
+            break; // VK_PRIOR: PAGE UP key
+        case 0x22: 
+			pressedKey = KeyCode::PAGE_DOWN;
+            break; // VK_NEXT: PAGE DOWN key
+        case 0x23: 
+			pressedKey = KeyCode::END;
+            break; // VK_END: END key
+        case 0x24: 
+			pressedKey = KeyCode::HOME;
+            break; // VK_HOME: HOME key
+        case 0x25: 
+			pressedKey = KeyCode::LEFT_ARROW;
+            break; // VK_LEFT: LEFT ARROW key
+        case 0x26: 
+			pressedKey = KeyCode::UP_ARROW;
+            break; // VK_UP: UP ARROW key
+        case 0x27: 
+			pressedKey = KeyCode::RIGHT_ARROW;
+            break; // VK_RIGHT: RIGHT ARROW key
+        case 0x28: 
+			pressedKey = KeyCode::DOWN_ARROW;
+            break; // VK_DOWN: DOWN ARROW key
+        case 0x29: 
+			pressedKey = KeyCode::SELECT;
+            break; // VK_SELECT: SELECT key
+        case 0x2A: 
+			pressedKey = KeyCode::PRINT;
+            break; // VK_PRINT: PRINT key
+        case 0x2B: 
+			pressedKey = KeyCode::EXECUTE;
+            break; // VK_EXECUTE: EXECUTE key
+        case 0x2C: 
+			pressedKey = KeyCode::PRINT_SCREEN;
+            break; // VK_SNAPSHOT: PRINT SCREEN key
+        case 0x2D: 
+			pressedKey = KeyCode::INSERT;
+            break; // VK_INSERT: INS key
+        case 0x2E: 
+			pressedKey = KeyCode::DELETE_KEY;
+            break; // VK_DELETE: DEL key
+        case 0x2F: 
+			pressedKey = KeyCode::HELP;
+            break; // VK_HELP: HELP key
+        case 0x30:     
+            pressedKey = KeyCode::KEY_0;
+            break;// '0' key 
+        case 0x31: 
+			pressedKey = KeyCode::KEY_1;
+            break; // '1' key
+        case 0x32: 
+			pressedKey = KeyCode::KEY_2;
+            break; // '2' key
+        case 0x33: 
+			pressedKey = KeyCode::KEY_3;
+            break; // '3' key
+        case 0x34: 
+			pressedKey = KeyCode::KEY_4;
+            break; // '4' key
+        case 0x35: 
+			pressedKey = KeyCode::KEY_5;
+            break; // '5' key
+        case 0x36: 
+			pressedKey = KeyCode::KEY_6;
+            break; // '6' key
+        case 0x37: 
+			pressedKey = KeyCode::KEY_7;
+            break; // '7' key
+        case 0x38: 
+			pressedKey = KeyCode::KEY_8;
+            break; // '8' key
+        case 0x39: 
+			pressedKey = KeyCode::KEY_9;
+            break; // '9' key
+        case 0x41: 
+			pressedKey = KeyCode::KEY_A;
+            break; // 'A' key
+        case 0x42:        // 'B' key
+			pressedKey = KeyCode::KEY_B;
+            break;
+        case 0x43: 
+			pressedKey = KeyCode::KEY_C;
+            break; // 'C' key
+        case 0x44: 
+			pressedKey = KeyCode::KEY_D;
+            break; // 'D' key
+        case 0x45: 
+			pressedKey = KeyCode::KEY_E;
+            break; // 'E' key
+        case 0x46: 
+			pressedKey = KeyCode::KEY_F;
+            break; // 'F' key
+        case 0x47:        // 'G' key
+			pressedKey = KeyCode::KEY_G;
+            break;
+        case 0x48: 
+			pressedKey = KeyCode::KEY_H;
+            break; // 'H' key
+        case 0x49: 
+			pressedKey = KeyCode::KEY_I;
+            break; // 'I' key
+        case 0x4A: 
+			pressedKey = KeyCode::KEY_J;
+            break; // 'J' key
+        case 0x4B: 
+			pressedKey = KeyCode::KEY_K;
+            break; // 'K' key
+        case 0x4C: 
+			pressedKey = KeyCode::KEY_L;
+            break; // 'L' key
+        case 0x4D: 
+			pressedKey = KeyCode::KEY_M;
+            break; // 'M' key
+        case 0x4E: 
+			pressedKey = KeyCode::KEY_N;
+            break; // 'N' key
+        case 0x4F: 
+			pressedKey = KeyCode::KEY_O;
+            break; // 'O' key
+        case 0x50: 
+			pressedKey = KeyCode::KEY_P;
+            break; // 'P' key
+        case 0x51: 
+			pressedKey = KeyCode::KEY_Q;
+            break; // 'Q' key
+        case 0x52:        // 'R' key
+			pressedKey = KeyCode::KEY_R;
+            break;
+        case 0x53: 
+			pressedKey = KeyCode::KEY_S;
+            break; // 'S' key
+        case 0x54: 
+			pressedKey = KeyCode::KEY_T;
+            break; // 'T' key
+        case 0x55: 
+			pressedKey = KeyCode::KEY_U;
+            break; // 'U' key
+        case 0x56: 
+			pressedKey = KeyCode::KEY_V;
+            break; // 'V' key
+        case 0x57: 
+			pressedKey = KeyCode::KEY_W;
+            break; // 'W' key
+        case 0x58: 
+			pressedKey = KeyCode::KEY_X;
+            break; // 'X' key
+        case 0x59: 
+			pressedKey = KeyCode::KEY_Y;
+            break; // 'Y' key
+        case 0x5A: 
+			pressedKey = KeyCode::KEY_Z;
+            break; // 'Z' key
+        case 0x5B: 
+			pressedKey = KeyCode::LEFT_WINDOWS;
+            break; // VK_LWIN: Left Windows key
+        case 0x5C: 
+			pressedKey = KeyCode::RIGHT_WINDOWS;
+            break; // VK_RWIN: Right Windows key
+        case 0x60: 
+			pressedKey = KeyCode::NUMPAD_0;
+            break; // VK_NUMPAD0: Numeric keypad 0 key
+        case 0x61: 
+			pressedKey = KeyCode::NUMPAD_1;
+            break; // VK_NUMPAD1: Numeric keypad 1 key
+        case 0x62: 
+			pressedKey = KeyCode::NUMPAD_2;
+            break; // VK_NUMPAD2: Numeric keypad 2 key
+        case 0x63: 
+			pressedKey = KeyCode::NUMPAD_3;
+            break; // VK_NUMPAD3: Numeric keypad 3 key
+        case 0x64: 
+			pressedKey = KeyCode::NUMPAD_4;
+            break; // VK_NUMPAD4: Numeric keypad 4 key
+        case 0x65: 
+			pressedKey = KeyCode::NUMPAD_5;
+            break; // VK_NUMPAD5: Numeric keypad 5 key
+        case 0x66: 
+			pressedKey = KeyCode::NUMPAD_6;
+            break; // VK_NUMPAD6: Numeric keypad 6 key
+        case 0x67: 
+			pressedKey = KeyCode::NUMPAD_7;
+            break; // VK_NUMPAD7: Numeric keypad 7 key
+        case 0x68: 
+			pressedKey = KeyCode::NUMPAD_8;
+            break; // VK_NUMPAD8: Numeric keypad 8 key
+        case 0x69: 
+			pressedKey = KeyCode::NUMPAD_9;
+            break; // VK_NUMPAD9: Numeric keypad 9 key
+        case 0x6A: 
+			pressedKey = KeyCode::MULTIPLY;
+            break; // VK_MULTIPLY: Multiply key (*)
+        case 0x6B: 
+			pressedKey = KeyCode::ADD_KEY;
+            break; // VK_ADD: Add key (+)
+        case 0x6C: 
+			pressedKey = KeyCode::SEPARATOR;
+            break; // VK_SEPARATOR: Separator key
+        case 0x6D: 
+			pressedKey = KeyCode::SUBTRACT;
+            break; // VK_SUBTRACT: Subtract key (-)
+        case 0x6E: 
+			pressedKey = KeyCode::DECIMAL;
+            break; // VK_DECIMAL: Decimal key (.)
+        case 0x6F: 
+			pressedKey = KeyCode::DIVIDE;
+            break; // VK_DIVIDE: Divide key (/)
+        case 0x70: 
+			pressedKey = KeyCode::F1;
+            break; // VK_F1
+        case 0x71: 
+			pressedKey = KeyCode::F2;
+            break; // VK_F2
+        case 0x72: 
+			pressedKey = KeyCode::F3;
+            break; // VK_F3
+        case 0x73: 
+			pressedKey = KeyCode::F4;
+            break; // VK_F4
+        case 0x74: 
+			pressedKey = KeyCode::F5;
+            break; // VK_F5
+        case 0x75: 
+			pressedKey = KeyCode::F6;
+            break; // VK_F6
+        case 0x76: 
+			pressedKey = KeyCode::F7;
+            break; // VK_F7
+        case 0x77: 
+			pressedKey = KeyCode::F8;
+            break; // VK_F8
+        case 0x78: 
+			pressedKey = KeyCode::F9;
+            break; // VK_F9
+        case 0x79: 
+			pressedKey = KeyCode::F10;
+            break; // VK_F10
+        case 0x7A: 
+			pressedKey = KeyCode::F11;
+            break; // VK_F11
+        case 0x7B: 
+			pressedKey = KeyCode::F12;
+            break; // VK_F12
+        case 0x90: 
+			pressedKey = KeyCode::NUM_LOCK;
+            break; // VK_NUMLOCK: NUM LOCK key
+        case 0x91: 
+			pressedKey = KeyCode::SCROLL_LOCK;
+            break; // VK_SCROLL: SCROLL LOCK key
+        case 0xA0: 
+			pressedKey = KeyCode::LEFT_SHIFT;
+            break; // VK_LSHIFT: Left SHIFT key
+        case 0xA1: 
+			pressedKey = KeyCode::RIGHT_SHIFT;
+            break; // VK_RSHIFT: Right SHIFT key
+        case 0xA2: 
+			pressedKey = KeyCode::LEFT_CONTROL;
+            break; // VK_LCONTROL: Left CONTROL key
+        case 0xA3: 
+			pressedKey = KeyCode::RIGHT_CONTROL;
+            break; // VK_RCONTROL: Right CONTROL key
+        case 0xA4: 
+			pressedKey = KeyCode::LEFT_ALT;
+            break; // VK_LMENU: Left ALT key
+        case 0xA5: 
+			pressedKey = KeyCode::RIGHT_ALT;
+            break; // VK_RMENU: Right ALT key
+
+        }
+        break;
+
+    default:
+        
+        return DefWindowProc(hWnd, message, wParam, lParam);
+    }
+
+    whenKeyPressed(pressedKey);
+
+    return 0;
+}
+
+
+//--------------------------------------------------------------------
+
+//	use int main if you want to have a console to print out message
+//int main()
+//	use WinMain if you don't want the console
+                    //ID Nunber,		obs ID number of parent, command line parameter,
+int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
+{
+
+    createWindow();
+    bool isDirectXCreated = createDirectX();
+    
+
+    //TODO
+    while (windowIsRunning()&& isDirectXCreated)
+    {
+        // Do something… 
+        //Game->getInput()
+        //Game->Physics()
+        //Game->render()
+        render();
+        
+    }
+    cleanupWindow();
+    cleanUpDirectX();
+
+
+
+    return 0;
+}
+//--------------------------------------------------------------------
+
+
+void render() {
+    //	Clear the back buffer.
+    d3dDevice->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(rgb.getRedValue(), rgb.getGreenValue(), rgb.getBlueValue()), 1.0f, 0);
+
+    //	Begin the scene
+    d3dDevice->BeginScene();
+
+    //	End the scene
+    d3dDevice->EndScene();
+
+    //	Present the back buffer to screen
+    d3dDevice->Present(NULL, NULL, NULL, NULL);
+
+}
+
 
 
 /*
@@ -61,9 +706,9 @@ bool createDirectX() {
 
 void createWindow() {
 
-//	Window's structure
-    
-    //	Sset all members in wndClass to 0.
+    //	Window's structure
+
+        //	Sset all members in wndClass to 0.
     ZeroMemory(&wndClass, sizeof(wndClass));
 
     //	Filling wndClass. You are to refer to MSDN for each of the members details.
@@ -91,7 +736,7 @@ void createWindow() {
         //	Free up the memory.
     UnregisterClass(wndClass.lpszClassName, GetModuleHandle(NULL));
 
-     
+
 
 
     return;
@@ -108,21 +753,6 @@ void cleanupWindow() {
     UnregisterClass(wndClass.lpszClassName, GetModuleHandle(NULL));
     return;
 };
-
-void render() {
-    //	Clear the back buffer.
-    d3dDevice->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(red, green, blue), 1.0f, 0);
-
-    //	Begin the scene
-    d3dDevice->BeginScene();
-
-    //	End the scene
-    d3dDevice->EndScene();
-
-    //	Present the back buffer to screen
-    d3dDevice->Present(NULL, NULL, NULL, NULL);
-
-}
 
 bool windowIsRunning() {
     MSG msg;
@@ -166,88 +796,5 @@ bool windowIsRunning() {
     return false;
 }
 
-//	Window Procedure, for event handling
-LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
-{
-    switch (message)
-    {
-        //	The message is post when we destroy the window.
-    case WM_DESTROY:
-        PostQuitMessage(0);
-        break;
-    case WM_KEYDOWN:
-        switch (wParam) {
 
-            //A
-        case 0x41:
-            break;
-            //Esc
-        case 0x1B:
-            PostQuitMessage(0);
-            break;
-            //r
-        case 0x52:
-            red+=10;
-            break;
-            //g
-        case 0x47:
-            green += 10;
-            break;
-            //b
-        case 0x42:
-            blue += 10;
-            break;
-            //0
-        case 0x30:
-            red = 0;
-            blue = 0;
-            green = 0;
-            break;
-        
-
-        }
-        break;
-        /*
-            Write your code here...
-        */
-
-        //	Default handling for other messages.
-    default:
-        return DefWindowProc(hWnd, message, wParam, lParam);
-    }
-    return 0;
-}
-
-
-//--------------------------------------------------------------------
-
-//	use int main if you want to have a console to print out message
-//int main()
-//	use WinMain if you don't want the console
-                    //ID Nunber,		obs ID number of parent, command line parameter,
-int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
-{
-
-    createWindow();
-    bool isDirectXCreated = createDirectX();
-    
-
-    //TODO
-    while (windowIsRunning()&& isDirectXCreated)
-    {
-        // Do something… 
-        //Game->getInput()
-        //Game->Physics()
-        //Game->render()
-        render();
-        
-    }
-    cleanupWindow();
-    cleanUpDirectX();
-
-
-
-    return 0;
-}
-//--------------------------------------------------------------------
 
