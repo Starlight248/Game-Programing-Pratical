@@ -4,12 +4,19 @@
 #include <Windows.h>
 #include<iostream>
 #include <d3dx9.h>
-
+#include <vector>
 
 using namespace std;
 //Class
 //--------------------------------------------------------------------
 
+enum class SpriteID {
+    CHARACTER,
+    CURSOR,
+
+    COUNT, //This must Be last element.
+
+};
 enum class KeyCode
 {
     LEFT_MOUSE_BUTTON = 0x01,
@@ -233,23 +240,20 @@ public:
 class Sprite {
 private:
     LPDIRECT3DTEXTURE9 texture;
-    LPD3DXSPRITE spriteBrush;
+
     RECT spriteRect;
     D3DXVECTOR3 spritePosition;
     int spriteVelocity;
 public:
-    Sprite() :texture(NULL), spriteBrush(NULL), spriteRect(), spritePosition(), spriteVelocity(0) {
+    Sprite() :texture(NULL) ,spriteRect(), spritePosition(), spriteVelocity(0) {
 
     }
-    Sprite(LPDIRECT3DTEXTURE9 texture, LPD3DXSPRITE spriteBrush) :texture(texture), spriteBrush(spriteBrush), spriteRect(), spritePosition(), spriteVelocity(0) {
+    Sprite(LPDIRECT3DTEXTURE9 texture, LPD3DXSPRITE spriteBrush) :texture(texture), spriteRect(), spritePosition(), spriteVelocity(0) {
 
     }
 
     LPDIRECT3DTEXTURE9 getTexture() {
         return this->texture;
-    }
-    LPD3DXSPRITE getSriteBrush() {
-        return this->spriteBrush;
     }
 
     RECT getSpriteRect() {
@@ -269,24 +273,78 @@ public:
     }
 
 
+    void setTexture(LPDIRECT3DTEXTURE9 texture) {
+        this->texture = texture;
+    }
 
+    void setRectLeft(int left) {
+        this->spriteRect.left = left;
+    }
+
+	void setRectRight(int right) {
+		this->spriteRect.right = right;
+	}
+
+	void setRectTop(int top) {
+		this->spriteRect.top = top;
+	}
+
+	void setRectBottom(int bottom) {
+		this->spriteRect.bottom = bottom;
+	}
+
+
+	void setPositionX(float x) {
+		this->spritePosition.x = x;
+	}
+
+	void increasePositionX(float x) {
+		this->spritePosition.x += x;
+	}
+
+	void decreasePositionX(float x) {
+		this->spritePosition.x -= x;
+	}
+
+    void setPositionY(float y) {
+        this->spritePosition.y = y;
+    }
+
+	void increasePositionY(float y) {
+		this->spritePosition.y += y;
+	}
+
+	void decreasePositionY(float y) {
+		this->spritePosition.y -= y;
+	}
+
+
+
+	void setPositionZ(float z) {
+		this->spritePosition.z = z;
+	}
+
+	void increasePositionZ(float z) {
+		this->spritePosition.z += z;
+	}
+
+    void decreasePositionZ(float z) {
+        this->spritePosition.z -= z;
+    }
 };
+//class ProgramObject {
+//
+//};
 //Global Var
 //--------------------------------------------------------------------
 
 HWND g_hWnd = NULL; //	Window handle
 WNDCLASS wndClass;
 IDirect3DDevice9* d3dDevice;
-
+LPD3DXSPRITE spriteBrush;
 RGBColor rgb = RGBColor();
-
-LPDIRECT3DTEXTURE9 texture = NULL;
-LPD3DXSPRITE spriteBrush = NULL;
-RECT spriteRect;
-D3DXVECTOR3 spritePosition;
-int spriteVelocity = 5;
-
-
+vector<Sprite> sprites = {};
+int totalSprites = static_cast<int>(SpriteID::COUNT);
 
 //--------------------------------------------------------------------
 LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
@@ -300,20 +358,26 @@ void whenKeyPressed(KeyCode pressedKey);
 void cleanUpSprite();
 void createSprite();
 enum class KeyCode;
+
+//will try to became a class
+SpriteID getSpriteEnum(int spriteID);
+LPCSTR getSpriteLocation(SpriteID sprite);
+int getSpriteID(SpriteID sprite);
 //--------------------------------------------------------------------
 
 
 
 void whenKeyPressed(KeyCode pressedKey) {
+    Sprite* targetSprite;
     switch (pressedKey) {
     case KeyCode::ESCAPE:       PostQuitMessage(0);break;
     case KeyCode::KEY_R:        rgb.changeRed(10);break;
     case KeyCode::KEY_B:        rgb.changeBlue(10);break;
     case KeyCode::KEY_G:        rgb.changeGreen(10);break;
-    case KeyCode::UP_ARROW:     spritePosition.y -= spriteVelocity;break;
-    case KeyCode::DOWN_ARROW:   spritePosition.y += spriteVelocity;break;
-    case KeyCode::RIGHT_ARROW:  spritePosition.x += spriteVelocity;break;
-    case KeyCode::LEFT_ARROW:  spritePosition.x -= spriteVelocity;break;
+    case KeyCode::UP_ARROW:     targetSprite = &sprites.at(getSpriteID(SpriteID::CHARACTER));targetSprite->decreasePositionY(targetSprite->getSpriteVelocity());break;
+    case KeyCode::DOWN_ARROW:   targetSprite = &sprites.at(getSpriteID(SpriteID::CHARACTER));targetSprite->increasePositionY(targetSprite->getSpriteVelocity());break;
+    case KeyCode::RIGHT_ARROW:  targetSprite = &sprites.at(getSpriteID(SpriteID::CHARACTER));targetSprite->increasePositionX(targetSprite->getSpriteVelocity());break;
+    case KeyCode::LEFT_ARROW:   targetSprite = &sprites.at(getSpriteID(SpriteID::CHARACTER));targetSprite->decreasePositionX(targetSprite->getSpriteVelocity());break;
     }
 
 }
@@ -329,36 +393,54 @@ void createSprite() {
         cout << "Error sprite" << endl;
     }
 
-    //	Create texture. Study the documentation.
-    hr = D3DXCreateTextureFromFile(d3dDevice, "image/bg1.png", &texture);
-    //hr = D3DXCreateTextureFromFileEx(/* Your Direct3D device */, "01.bmp", D3DX_DEFAULT, D3DX_DEFAULT, 
-    //									D3DX_DEFAULT, NULL, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, 
-    //									D3DX_DEFAULT, D3DX_DEFAULT, D3DCOLOR_XRGB(255, 255, 255), 
-    //									NULL, NULL, &texture);
-
-    //	Specify the "	" rectangle.
+    for (int i = 0; i < totalSprites;i++) {
+        Sprite newSprite = Sprite();
+        SpriteID sprite = getSpriteEnum(i);
+        LPDIRECT3DTEXTURE9 tempTexture = NULL;
+        LPCSTR location = getSpriteLocation(sprite);
 
 
-    spriteRect.left = 44;
-    spriteRect.right = 107;
-    spriteRect.top = 157;
-    spriteRect.bottom = 201;
+        //	Create texture. Study the documentation.
+        hr = D3DXCreateTextureFromFile(d3dDevice, location, &tempTexture);
+        //hr = D3DXCreateTextureFromFileEx(/* Your Direct3D device */, "01.bmp", D3DX_DEFAULT, D3DX_DEFAULT, 
+        //									D3DX_DEFAULT, NULL, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, 
+        //									D3DX_DEFAULT, D3DX_DEFAULT, D3DCOLOR_XRGB(255, 255, 255), 
+        //									NULL, NULL, &texture);
 
-    spritePosition.x = 100;
-    spritePosition.y = 100;
-    spritePosition.z = 0;
+        //	Specify the "	" rectangle.
+        newSprite.setTexture(tempTexture);
+
+        newSprite.setRectLeft(44);
+		newSprite.setRectRight(107);
+		newSprite.setRectTop(157);
+		newSprite.setRectBottom(201);
+
+		newSprite.setPositionX(100);
+		newSprite.setPositionY(100);
+		newSprite.setPositionZ(0);
+
+		sprites.push_back(newSprite);
+        
+    }
+    
+
 
 }
 
 void cleanUpSprite() {
     if (spriteBrush != nullptr) {
         spriteBrush->Release();
-        spriteBrush = NULL;
+        spriteBrush=NULL;
     }
+    while (sprites.size() > 0) {
+        Sprite sprite = sprites.back();
 
-    if (texture != nullptr) {
-        texture->Release();
-        texture = NULL;
+
+        if (sprite.getTexture() != nullptr) {
+            sprite.getTexture()->Release();
+            sprite.setTexture(NULL);
+        }
+        sprites.pop_back();
     }
 }
 //	use int main if you want to have a console to print out message
@@ -371,10 +453,6 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
     createWindow();
     bool isDirectXCreated = createDirectX();
     createSprite();
-
-
-    ;
-
 
 
     //TODO
@@ -412,15 +490,26 @@ void render() {
 
     //	Begin the scene
     d3dDevice->BeginScene();
-    //	Specify alpha blend will ensure that the spriteBrush will render the background with alpha.
+    int totalSprites = static_cast<int>(SpriteID::COUNT);
     spriteBrush->Begin(D3DXSPRITE_ALPHABLEND);
+    for(int i =0;i< totalSprites;i++)
+    //	Specify alpha blend will ensure that the spriteBrush will render the background with alpha.
+    {
+        Sprite currentSprite = sprites.at(i);
+        RECT spriteRect = currentSprite.getSpriteRect();
+        LPDIRECT3DTEXTURE9 texture = currentSprite.getTexture();
+        D3DXVECTOR3 spritePosition =currentSprite.getSpritePosition();
 
-    //	Sprite rendering. Study the documentation.
-    spriteBrush->Draw(texture, &spriteRect, NULL, &spritePosition, D3DCOLOR_XRGB(255, 255, 255));
-    //spriteBrush->Draw(texture, &spriteRect, NULL, NULL, D3DCOLOR_XRGB(255, 255, 255));
-    //spriteBrush->Draw(texture, &spriteRect, NULL, &D3DXVECTOR3(32, 32, 0), D3DCOLOR_XRGB(255, 255, 255));
 
-    //	End spriteBrush drawing
+
+        //	Sprite rendering. Study the documentation.
+        spriteBrush->Draw(texture, &spriteRect, NULL, &spritePosition, D3DCOLOR_XRGB(255, 255, 255));
+        //spriteBrush->Draw(texture, &spriteRect, NULL, NULL, D3DCOLOR_XRGB(255, 255, 255));
+        //spriteBrush->Draw(texture, &spriteRect, NULL, &D3DXVECTOR3(32, 32, 0), D3DCOLOR_XRGB(255, 255, 255));
+
+        //	End spriteBrush drawing
+
+    }
     spriteBrush->End();
 
     //	End the scene
@@ -902,4 +991,24 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
     return 0;
 }
 
+LPCSTR getSpriteLocation(SpriteID sprite) {
+    switch (sprite) {
+    case SpriteID::CHARACTER: return "image/bg1.png";
+    case SpriteID::CURSOR: return 0;
+    }
+}
+
+SpriteID getSpriteEnum(int spriteID) {
+    switch (spriteID) {
+    case 0: return SpriteID::CHARACTER;
+    case 1: return SpriteID::CURSOR;
+    }
+}
+
+int getSpriteID(SpriteID sprite) {
+    switch (sprite) {
+    case SpriteID::CHARACTER:return 0;
+    case SpriteID::CURSOR: return 1;
+    }
+}
 
