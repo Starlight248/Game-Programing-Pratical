@@ -345,6 +345,7 @@ LPD3DXSPRITE spriteBrush;
 RGBColor rgb = RGBColor();
 vector<Sprite> sprites = {};
 int totalSprites = static_cast<int>(SpriteID::COUNT);
+POINT CursorPosition;
 
 //--------------------------------------------------------------------
 LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
@@ -409,16 +410,29 @@ void createSprite() {
 
         //	Specify the "	" rectangle.
         newSprite.setTexture(tempTexture);
+        if(getSpriteID(SpriteID::CHARACTER)==i)
+        {
+            newSprite.setRectLeft(44);
+            newSprite.setRectRight(107);
+            newSprite.setRectTop(157);
+            newSprite.setRectBottom(201);
 
-        newSprite.setRectLeft(44);
-		newSprite.setRectRight(107);
-		newSprite.setRectTop(157);
-		newSprite.setRectBottom(201);
+            newSprite.setPositionX(100);
+            newSprite.setPositionY(100);
+            newSprite.setPositionZ(0);
 
-		newSprite.setPositionX(100);
-		newSprite.setPositionY(100);
-		newSprite.setPositionZ(0);
+            newSprite.setSpriteVelocity(5);
+        }
+        else if (getSpriteID(SpriteID::CURSOR) == i) {
+            newSprite.setRectLeft(0);
+            newSprite.setRectRight(24);
+            newSprite.setRectTop(0);
+            newSprite.setRectBottom(24);
 
+            newSprite.setPositionX(100);
+            newSprite.setPositionY(100);
+            newSprite.setPositionZ(0);
+        }
 		sprites.push_back(newSprite);
         
     }
@@ -647,7 +661,9 @@ bool windowIsRunning() {
 
 LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+
     KeyCode pressedKey;
+    Sprite* cursor;
     switch (message)
     {
     case WM_DESTROY:
@@ -974,11 +990,16 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
             break; // VK_LMENU: Left ALT key
         case 0xA5:
             pressedKey = KeyCode::RIGHT_ALT;
-            break; // VK_RMENU: Right ALT key
+            break;// VK_RMENU: Right ALT key
 
 
         }
+        cursor = &sprites.at(getSpriteID(SpriteID::CURSOR));
+        GetCursorPos(&CursorPosition);
+        cursor->setPositionX(CursorPosition.x);
+        cursor->setPositionY(CursorPosition.y);
         whenKeyPressed(pressedKey);
+
         break;
 
     default:
@@ -994,7 +1015,7 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 LPCSTR getSpriteLocation(SpriteID sprite) {
     switch (sprite) {
     case SpriteID::CHARACTER: return "image/bg1.png";
-    case SpriteID::CURSOR: return 0;
+    case SpriteID::CURSOR: return "image/pointer.png";
     }
 }
 

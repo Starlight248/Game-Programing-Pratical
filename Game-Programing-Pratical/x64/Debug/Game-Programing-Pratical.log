@@ -1,11 +1,13 @@
 ﻿  main.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(377,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(378,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(379,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(380,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(1006,1): warning C4715: 'getSpriteEnum': not all control paths return a value
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(999,1): warning C4715: 'getSpriteLocation': not all control paths return a value
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(1013,1): warning C4715: 'getSpriteID': not all control paths return a value
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(381,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(999,44): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(1000,44): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(1027,1): warning C4715: 'getSpriteEnum': not all control paths return a value
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(1020,1): warning C4715: 'getSpriteLocation': not all control paths return a value
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(1034,1): warning C4715: 'getSpriteID': not all control paths return a value
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(232,1): warning C4715: 'RGBColor::checkIncreasement': not all control paths return a value
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(210,1): warning C4715: 'RGBColor::getLastColorAddress': not all control paths return a value
   Game-Programing-Pratical.vcxproj -> E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\x64\Debug\Game-Programing-Pratical.exe
