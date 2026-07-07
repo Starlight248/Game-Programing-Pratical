@@ -249,8 +249,25 @@ public:
         return this->texture;
     }
     LPD3DXSPRITE getSriteBrush() {
-        return this.spriteBrush;
+        return this->spriteBrush;
     }
+
+    RECT getSpriteRect() {
+        return this->spriteRect;
+    }
+
+    D3DXVECTOR3 getSpritePosition() {
+        return this->spritePosition;
+    }
+
+    int getSpriteVelocity() {
+        return this->spriteVelocity;
+    }
+
+    void setSpriteVelocity(int velocity) {
+        this->spriteVelocity = velocity;
+    }
+
 
 
 };
