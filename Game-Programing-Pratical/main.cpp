@@ -230,6 +230,30 @@ public:
 
 
 };
+class Sprite {
+private:
+    LPDIRECT3DTEXTURE9 texture;
+    LPD3DXSPRITE spriteBrush;
+    RECT spriteRect;
+    D3DXVECTOR3 spritePosition;
+    int spriteVelocity;
+public:
+    Sprite() :texture(NULL), spriteBrush(NULL), spriteRect(), spritePosition(), spriteVelocity(0) {
+
+    }
+    Sprite(LPDIRECT3DTEXTURE9 texture, LPD3DXSPRITE spriteBrush) :texture(texture), spriteBrush(spriteBrush), spriteRect(), spritePosition(), spriteVelocity(0) {
+
+    }
+
+    LPDIRECT3DTEXTURE9 getTexture() {
+        return this->texture;
+    }
+    LPD3DXSPRITE getSriteBrush() {
+        return this.spriteBrush;
+    }
+
+
+};
 //Global Var
 //--------------------------------------------------------------------
 
@@ -265,18 +289,14 @@ enum class KeyCode;
 
 void whenKeyPressed(KeyCode pressedKey) {
     switch (pressedKey) {
-    case KeyCode::ESCAPE:
-        PostQuitMessage(0);
-        break;
-    case KeyCode::KEY_R:
-        rgb.changeRed(10);
-        break;
-    case KeyCode::KEY_B:
-        rgb.changeBlue(10);
-        break;
-    case KeyCode::KEY_G:
-        rgb.changeGreen(10);
-        break;
+    case KeyCode::ESCAPE:       PostQuitMessage(0);break;
+    case KeyCode::KEY_R:        rgb.changeRed(10);break;
+    case KeyCode::KEY_B:        rgb.changeBlue(10);break;
+    case KeyCode::KEY_G:        rgb.changeGreen(10);break;
+    case KeyCode::UP_ARROW:     spritePosition.y -= spriteVelocity;break;
+    case KeyCode::DOWN_ARROW:   spritePosition.y += spriteVelocity;break;
+    case KeyCode::RIGHT_ARROW:  spritePosition.x += spriteVelocity;break;
+    case KeyCode::LEFT_ARROW:  spritePosition.x -= spriteVelocity;break;
     }
 
 }
@@ -379,7 +399,7 @@ void render() {
     spriteBrush->Begin(D3DXSPRITE_ALPHABLEND);
 
     //	Sprite rendering. Study the documentation.
-    spriteBrush->Draw(texture, NULL, NULL, NULL, D3DCOLOR_XRGB(255, 255, 255));
+    spriteBrush->Draw(texture, &spriteRect, NULL, &spritePosition, D3DCOLOR_XRGB(255, 255, 255));
     //spriteBrush->Draw(texture, &spriteRect, NULL, NULL, D3DCOLOR_XRGB(255, 255, 255));
     //spriteBrush->Draw(texture, &spriteRect, NULL, &D3DXVECTOR3(32, 32, 0), D3DCOLOR_XRGB(255, 255, 255));
 
@@ -411,8 +431,8 @@ bool createDirectX() {
     d3dPP.SwapEffect = D3DSWAPEFFECT_DISCARD;
     d3dPP.BackBufferFormat = D3DFMT_X8R8G8B8;
     d3dPP.BackBufferCount = 1;
-    d3dPP.BackBufferWidth = 400;
-    d3dPP.BackBufferHeight = 300;
+    d3dPP.BackBufferWidth = 1280;
+    d3dPP.BackBufferHeight = 960;
     d3dPP.hDeviceWindow = g_hWnd;
 
 
