@@ -359,6 +359,7 @@ void whenKeyPressed(KeyCode pressedKey);
 void cleanUpSprite();
 void createSprite();
 enum class KeyCode;
+void trackCursorPosition();
 
 //will try to became a class
 SpriteID getSpriteEnum(int spriteID);
@@ -478,8 +479,8 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
         //Game->render()
                 //	Clear and begin scene
 
-
-
+  
+        trackCursorPosition();
         //	End and present scene
         render();
 
@@ -567,6 +568,13 @@ bool createDirectX() {
     }
 }
 
+    Sprite* cursor;
+    cursor = &sprites.at(getSpriteID(SpriteID::CURSOR));
+    GetCursorPos(&CursorPosition);
+    cursor->setPositionX(CursorPosition.x);
+    cursor->setPositionY(CursorPosition.y);
+}
+
 void createWindow() {
 
     //	Window's structure
@@ -591,11 +599,11 @@ void createWindow() {
         Create the Window.
     */
     //	You are to refer to MSDN for each of the parameters details.
-    g_hWnd = CreateWindowEx(0, wndClass.lpszClassName, "???", WS_OVERLAPPEDWINDOW, 0, 100, 400, 300, NULL, NULL, GetModuleHandle(NULL), NULL);
+    g_hWnd = CreateWindowEx(0, wndClass.lpszClassName, "???", WS_OVERLAPPEDWINDOW, 0, 100, 900, 600, NULL, NULL, GetModuleHandle(NULL), NULL);
     ShowWindow(g_hWnd, 1);
 
     //	Some interesting function to try out.
-    //	ShowCursor(false);
+    	ShowCursor(false);
         //	Free up the memory.
     UnregisterClass(wndClass.lpszClassName, GetModuleHandle(NULL));
 
@@ -663,7 +671,7 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 {
 
     KeyCode pressedKey;
-    Sprite* cursor;
+   
     switch (message)
     {
     case WM_DESTROY:
@@ -994,10 +1002,7 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 
 
         }
-        cursor = &sprites.at(getSpriteID(SpriteID::CURSOR));
-        GetCursorPos(&CursorPosition);
-        cursor->setPositionX(CursorPosition.x);
-        cursor->setPositionY(CursorPosition.y);
+
         whenKeyPressed(pressedKey);
 
         break;
