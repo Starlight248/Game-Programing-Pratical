@@ -347,6 +347,7 @@ vector<Sprite> sprites = {};
 int totalSprites = static_cast<int>(SpriteID::COUNT);
 POINT CursorPosition;
 
+
 //--------------------------------------------------------------------
 LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 bool createDirectX();
@@ -480,7 +481,7 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
                 //	Clear and begin scene
 
   
-        trackCursorPosition();
+        
         //	End and present scene
         render();
 
@@ -568,12 +569,17 @@ bool createDirectX() {
     }
 }
 
-void trackCursorPosition() {
+void trackCursorPosition(LPARAM lParam) {
     Sprite* cursor;
     cursor = &sprites.at(getSpriteID(SpriteID::CURSOR));
-    GetCursorPos(&CursorPosition);
-    cursor->setPositionX(CursorPosition.x);
-    cursor->setPositionY(CursorPosition.y);
+    int x = (short)LOWORD(lParam);
+    int y = (short)HIWORD(lParam);
+
+
+    //cout << "System Cursor     X: " << CursorPosition.x << ", Y: " << CursorPosition.y<<endl;
+    //cout << "Custom Cursor     X: " << cursor->getSpritePosition().x << ", Y: " << cursor->getSpritePosition().y << endl;
+    cursor->setPositionX(x);
+    cursor->setPositionY(y);
 }
 
 void createWindow() {
@@ -672,7 +678,7 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
 {
 
     KeyCode pressedKey;
-   
+    
     switch (message)
     {
     case WM_DESTROY:
@@ -1007,7 +1013,9 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
         whenKeyPressed(pressedKey);
 
         break;
-
+    case WM_MOUSEMOVE:
+        trackCursorPosition(lParam);
+        break;
     default:
 
         return DefWindowProc(hWnd, message, wParam, lParam);
