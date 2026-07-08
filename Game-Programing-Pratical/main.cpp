@@ -568,6 +568,7 @@ bool createDirectX() {
     }
 }
 
+void trackCursorPosition() {
     Sprite* cursor;
     cursor = &sprites.at(getSpriteID(SpriteID::CURSOR));
     GetCursorPos(&CursorPosition);
