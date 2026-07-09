@@ -6,346 +6,18 @@
 #include <d3dx9.h>
 #include <vector>
 
+
+#include "enum.h";
+#include "RGBColor.h";
+#include "Sprite.h"
+#include "Texture.h"
 using namespace std;
 //Class
 //--------------------------------------------------------------------
 
-enum class SpriteID {
-    CHARACTER,
-    CURSOR,
-
-    COUNT, //This must Be last element.
-
-};
-enum class TextureName {
-
-};
-enum class KeyCode
-{
-    LEFT_MOUSE_BUTTON = 0x01,
-    RIGHT_MOUSE_BUTTON = 0x02,
-    CONTROL_BREAK = 0x03, // Cancel (Ctrl+Pause)
-    MIDDLE_MOUSE_BUTTON = 0x04,
-    X1_MOUSE_BUTTON = 0x05,
-    X2_MOUSE_BUTTON = 0x06,
-    BACKSPACE = 0x08,
-    TAB = 0x09,
-    CLEAR = 0x0C,
-    ENTER = 0x0D, // Return
-    SHIFT = 0x10,
-    CONTROL = 0x11, // Ctrl
-    ALT = 0x12, // Menu
-    PAUSE = 0x13,
-    CAPS_LOCK = 0x14,
-    ESCAPE = 0x1B, // Esc
-    SPACE = 0x20,
-    PAGE_UP = 0x21,
-    PAGE_DOWN = 0x22,
-    END = 0x23,
-    HOME = 0x24,
-    LEFT_ARROW = 0x25,
-    UP_ARROW = 0x26,
-    RIGHT_ARROW = 0x27,
-    DOWN_ARROW = 0x28,
-    SELECT = 0x29,
-    PRINT = 0x2A,
-    EXECUTE = 0x2B,
-    PRINT_SCREEN = 0x2C,
-    INSERT = 0x2D,
-    DELETE_KEY = 0x2E,
-    HELP = 0x2F,
-    KEY_0 = 0x30,
-    KEY_1 = 0x31,
-    KEY_2 = 0x32,
-    KEY_3 = 0x33,
-    KEY_4 = 0x34,
-    KEY_5 = 0x35,
-    KEY_6 = 0x36,
-    KEY_7 = 0x37,
-    KEY_8 = 0x38,
-    KEY_9 = 0x39,
-    KEY_A = 0x41,
-    KEY_B = 0x42,
-    KEY_C = 0x43,
-    KEY_D = 0x44,
-    KEY_E = 0x45,
-    KEY_F = 0x46,
-    KEY_G = 0x47,
-    KEY_H = 0x48,
-    KEY_I = 0x49,
-    KEY_J = 0x4A,
-    KEY_K = 0x4B,
-    KEY_L = 0x4C,
-    KEY_M = 0x4D,
-    KEY_N = 0x4E,
-    KEY_O = 0x4F,
-    KEY_P = 0x50,
-    KEY_Q = 0x51,
-    KEY_R = 0x52,
-    KEY_S = 0x53,
-    KEY_T = 0x54,
-    KEY_U = 0x55,
-    KEY_V = 0x56,
-    KEY_W = 0x57,
-    KEY_X = 0x58,
-    KEY_Y = 0x59,
-    KEY_Z = 0x5A,
-    LEFT_WINDOWS = 0x5B,
-    RIGHT_WINDOWS = 0x5C,
-    NUMPAD_0 = 0x60,
-    NUMPAD_1 = 0x61,
-    NUMPAD_2 = 0x62,
-    NUMPAD_3 = 0x63,
-    NUMPAD_4 = 0x64,
-    NUMPAD_5 = 0x65,
-    NUMPAD_6 = 0x66,
-    NUMPAD_7 = 0x67,
-    NUMPAD_8 = 0x68,
-    NUMPAD_9 = 0x69,
-    MULTIPLY = 0x6A, // *
-    ADD_KEY = 0x6B, // +
-    SEPARATOR = 0x6C,
-    SUBTRACT = 0x6D, // -
-    DECIMAL = 0x6E, // .
-    DIVIDE = 0x6F, // /
-    F1 = 0x70,
-    F2 = 0x71,
-    F3 = 0x72,
-    F4 = 0x73,
-    F5 = 0x74,
-    F6 = 0x75,
-    F7 = 0x76,
-    F8 = 0x77,
-    F9 = 0x78,
-    F10 = 0x79,
-    F11 = 0x7A,
-    F12 = 0x7B,
-    NUM_LOCK = 0x90,
-    SCROLL_LOCK = 0x91,
-    LEFT_SHIFT = 0xA0,
-    RIGHT_SHIFT = 0xA1,
-    LEFT_CONTROL = 0xA2,
-    RIGHT_CONTROL = 0xA3,
-    LEFT_ALT = 0xA4,
-    RIGHT_ALT = 0xA5
-};
-class RGBColor {
-private:
-    int red;
-    int green;
-    int blue;
-    int last_red;
-    int last_blue;
-    int last_green;
-
-public:
-    RGBColor() :red(0), blue(0), green(0), last_red(-1), last_blue(-1), last_green(-1) {
-    }
-    RGBColor(int r, int g, int b) : red(r), green(g), blue(b), last_red(-1), last_blue(-1), last_green(-1) {
-        checkCrossing(&red);
-        checkCrossing(&blue);
-        checkCrossing(&green);
-    }
-
-    int getRedValue() const {
-        return this->red;
-
-    }
-
-    int getBlueValue() const {
-        return this->blue;
-    }
-
-    int getGreenValue() const {
-        return this->green;
-    }
-
-    void setRed(int red) {
-        this->red = red;
-        checkCrossing(&red);
-    }
-
-    void setBlue(int blue) {
-        this->blue = blue;
-        checkCrossing(&blue);
-    }
-
-    void setGreen(int green) {
-        this->green = green;
-        checkCrossing(&green);
-    }
-    void increaseColorValue(int* color_address, int* last_color_address, int value) {
-        *last_color_address = *color_address;
-        *color_address += value;
-        checkCrossing(color_address);
-    }
-
-    void decreaseColorValue(int* color_address, int* last_color_address, int value) {
-        *last_color_address = *color_address;
-        *color_address -= value;
-        checkCrossing(color_address);
-    }
-
-
-    void changeGreen(int value) {
-        bool increase = checkIncreasement(&(this->green), value);
-        if (increase) increaseColorValue(&(this->green), &(this->last_green), value);
-        else if (!increase) decreaseColorValue(&(this->green), &(this->last_green), value);
-    }
-
-    void changeRed(int value) {
-        bool increase = checkIncreasement(&(this->red), value);
-        if (increase) increaseColorValue(&(this->red), &(this->last_red), value);
-        else if (!increase) decreaseColorValue(&(this->red), &(this->last_red), value);
-    }
-
-    void changeBlue(int value) {
-        bool increase = checkIncreasement(&(this->blue), value);
-        if (increase) increaseColorValue(&(this->blue), &(this->last_blue), value);
-        else if (!increase) decreaseColorValue(&(this->blue), &(this->last_blue), value);
-    }
-
-    int* getLastColorAddress(int* color_address) {
-        if (color_address == &(this->red)) return &(this->last_red);
-        else if (color_address == &(this->blue)) return &(this->last_blue);
-        else if (color_address == &(this->green)) return &(this->last_green);
-
-    }
-
-    void checkCrossing(int* color_address) {
-        int* last_color_address = getLastColorAddress(color_address);
-        if (*color_address < 0) {
-            *color_address = 0;
-            *last_color_address = -1;
-        }
-        else if (*color_address > 255) {
-            *color_address = 255;
-            *last_color_address = 256;
-        }
-    }
-
-    /*
-    return True if next change is increase
-    *
-    */
-    bool checkIncreasement(int* color_address, int value) {
-        int* last_color_address = getLastColorAddress(color_address);
-        if (*color_address > *last_color_address) return true;
-        else if (*color_address < *last_color_address) return false;
-    }
-
-
-
-
-
-
-};
-class Sprite {
-private:
-    LPDIRECT3DTEXTURE9 texture;
-
-    RECT spriteRect;
-    D3DXVECTOR3 spritePosition;
-    int spriteVelocity;
-public:
-    Sprite() :texture(NULL) ,spriteRect(), spritePosition(), spriteVelocity(0) {
-
-    }
-    Sprite(LPDIRECT3DTEXTURE9 texture, LPD3DXSPRITE spriteBrush) :texture(texture), spriteRect(), spritePosition(), spriteVelocity(0) {
-
-    }
-
-    LPDIRECT3DTEXTURE9 getTexture() {
-        return this->texture;
-    }
-
-    RECT getSpriteRect() {
-        return this->spriteRect;
-    }
-
-    D3DXVECTOR3 getSpritePosition() {
-        return this->spritePosition;
-    }
-
-    int getSpriteVelocity() {
-        return this->spriteVelocity;
-    }
-
-    void setSpriteVelocity(int velocity) {
-        this->spriteVelocity = velocity;
-    }
-
-
-    void setTexture(LPDIRECT3DTEXTURE9 texture) {
-        this->texture = texture;
-    }
-
-    void setRectLeft(int left) {
-        this->spriteRect.left = left;
-    }
-
-	void setRectRight(int right) {
-		this->spriteRect.right = right;
-	}
-
-	void setRectTop(int top) {
-		this->spriteRect.top = top;
-	}
-
-	void setRectBottom(int bottom) {
-		this->spriteRect.bottom = bottom;
-	}
-
-
-	void setPositionX(float x) {
-		this->spritePosition.x = x;
-	}
-
-	void increasePositionX(float x) {
-		this->spritePosition.x += x;
-	}
-
-	void decreasePositionX(float x) {
-		this->spritePosition.x -= x;
-	}
-
-    void setPositionY(float y) {
-        this->spritePosition.y = y;
-    }
-
-	void increasePositionY(float y) {
-		this->spritePosition.y += y;
-	}
-
-	void decreasePositionY(float y) {
-		this->spritePosition.y -= y;
-	}
-
-
-
-	void setPositionZ(float z) {
-		this->spritePosition.z = z;
-	}
-
-	void increasePositionZ(float z) {
-		this->spritePosition.z += z;
-	}
-
-    void decreasePositionZ(float z) {
-        this->spritePosition.z -= z;
-    }
-};
 
 //----------
-class Texture {
 
-    LPDIRECT3DTEXTURE9 texture;
-
-    Texture() :texture(NULL){}
-    Texture(LPDIRECT3DTEXTURE9 texture) :texture(texture) {
-        
-    }
-};
 //class ProgramObject {
 //
 //};
@@ -361,7 +33,10 @@ vector<Sprite> sprites = {};
 vector<Texture> textures = {};
 int totalSprites = static_cast<int>(SpriteID::COUNT);
 POINT CursorPosition;
-
+LPDIRECT3DTEXTURE9 numberTexture;
+RECT numberRect;
+D3DXVECTOR3 numberPosition;
+bool showNumber = false;
 
 //--------------------------------------------------------------------
 LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
@@ -376,6 +51,7 @@ void cleanUpSprite();
 void createSprite();
 enum class KeyCode;
 void trackCursorPosition();
+void selectNumberRect(int selected);
 
 //will try to became a class
 SpriteID getSpriteEnum(int spriteID);
@@ -396,6 +72,17 @@ void whenKeyPressed(KeyCode pressedKey) {
     case KeyCode::DOWN_ARROW:   targetSprite = &sprites.at(getSpriteID(SpriteID::CHARACTER));targetSprite->increasePositionY(targetSprite->getSpriteVelocity());break;
     case KeyCode::RIGHT_ARROW:  targetSprite = &sprites.at(getSpriteID(SpriteID::CHARACTER));targetSprite->increasePositionX(targetSprite->getSpriteVelocity());break;
     case KeyCode::LEFT_ARROW:   targetSprite = &sprites.at(getSpriteID(SpriteID::CHARACTER));targetSprite->decreasePositionX(targetSprite->getSpriteVelocity());break;
+    case KeyCode::KEY_0:        selectNumberRect(0);break;
+    case KeyCode::KEY_1:        selectNumberRect(1);break;
+    case KeyCode::KEY_2:        selectNumberRect(2);break;
+    case KeyCode::KEY_3:        selectNumberRect(3);break;
+    case KeyCode::KEY_4:        selectNumberRect(4);break;
+    case KeyCode::KEY_5:        selectNumberRect(5);break;
+    case KeyCode::KEY_6:        selectNumberRect(6);break;
+    case KeyCode::KEY_7:        selectNumberRect(7);break;
+    case KeyCode::KEY_8:        selectNumberRect(8);break;
+    case KeyCode::KEY_9:        selectNumberRect(9);break;
+    
     }
 
 }
@@ -404,6 +91,16 @@ void whenKeyPressed(KeyCode pressedKey) {
 
 
 //--------------------------------------------------------------------
+void selectNumberRect(int selected) {
+    int top, bottom, left, right;
+    int row = (selected -  1 )/ 4;
+    int col = (selected - 1) % 3;
+    row++;
+    col++;
+    cout << "row: " << row << ", col :" << col << endl;;
+    
+}
+
 void createSprite() {
     //	Create spriteBrush. Study the documentation. 
     HRESULT hr = D3DXCreateSprite(d3dDevice, &spriteBrush);
@@ -454,7 +151,10 @@ void createSprite() {
         
     }
     
-
+    hr = D3DXCreateTextureFromFile(d3dDevice,"image/numbers.bmp",&numberTexture);
+    numberPosition.x = 300;
+    numberPosition.y = 400;
+    numberRect.left = numberRect.right = numberRect.top = numberRect.bottom = 0;
 
 }
 
@@ -541,6 +241,7 @@ void render() {
         //	End spriteBrush drawing
 
     }
+    spriteBrush->Draw(numberTexture, &numberRect, NULL, &numberPosition, D3DCOLOR_XRGB(255, 255, 255));
     spriteBrush->End();
 
     //	End the scene
@@ -1025,8 +726,8 @@ LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM 
         case 0xA5:
             pressedKey = KeyCode::RIGHT_ALT;
             break;// VK_RMENU: Right ALT key
-
-
+        default:
+            return DefWindowProc(hWnd, message, wParam, lParam);
         }
 
         whenKeyPressed(pressedKey);
