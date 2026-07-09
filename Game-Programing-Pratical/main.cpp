@@ -17,6 +17,9 @@ enum class SpriteID {
     COUNT, //This must Be last element.
 
 };
+enum class TextureName {
+
+};
 enum class KeyCode
 {
     LEFT_MOUSE_BUTTON = 0x01,
@@ -335,9 +338,13 @@ public:
 
 //----------
 class Texture {
+
     LPDIRECT3DTEXTURE9 texture;
 
     Texture() :texture(NULL){}
+    Texture(LPDIRECT3DTEXTURE9 texture) :texture(texture) {
+        
+    }
 };
 //class ProgramObject {
 //
