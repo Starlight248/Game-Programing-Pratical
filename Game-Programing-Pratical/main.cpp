@@ -332,6 +332,13 @@ public:
         this->spritePosition.z -= z;
     }
 };
+
+//----------
+class Texture {
+    LPDIRECT3DTEXTURE9 texture;
+
+    Texture() :texture(NULL){}
+};
 //class ProgramObject {
 //
 //};
@@ -344,6 +351,7 @@ IDirect3DDevice9* d3dDevice;
 LPD3DXSPRITE spriteBrush;
 RGBColor rgb = RGBColor();
 vector<Sprite> sprites = {};
+vector<Texture> textures = {};
 int totalSprites = static_cast<int>(SpriteID::COUNT);
 POINT CursorPosition;
 
@@ -403,12 +411,12 @@ void createSprite() {
         LPCSTR location = getSpriteLocation(sprite);
 
 
-        //	Create texture. Study the documentation.
+        //	Create Texture. Study the documentation.
         hr = D3DXCreateTextureFromFile(d3dDevice, location, &tempTexture);
         //hr = D3DXCreateTextureFromFileEx(/* Your Direct3D device */, "01.bmp", D3DX_DEFAULT, D3DX_DEFAULT, 
         //									D3DX_DEFAULT, NULL, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, 
         //									D3DX_DEFAULT, D3DX_DEFAULT, D3DCOLOR_XRGB(255, 255, 255), 
-        //									NULL, NULL, &texture);
+        //									NULL, NULL, &Texture);
 
         //	Specify the "	" rectangle.
         newSprite.setTexture(tempTexture);
@@ -520,8 +528,8 @@ void render() {
 
         //	Sprite rendering. Study the documentation.
         spriteBrush->Draw(texture, &spriteRect, NULL, &spritePosition, D3DCOLOR_XRGB(255, 255, 255));
-        //spriteBrush->Draw(texture, &spriteRect, NULL, NULL, D3DCOLOR_XRGB(255, 255, 255));
-        //spriteBrush->Draw(texture, &spriteRect, NULL, &D3DXVECTOR3(32, 32, 0), D3DCOLOR_XRGB(255, 255, 255));
+        //spriteBrush->Draw(Texture, &spriteRect, NULL, NULL, D3DCOLOR_XRGB(255, 255, 255));
+        //spriteBrush->Draw(Texture, &spriteRect, NULL, &D3DXVECTOR3(32, 32, 0), D3DCOLOR_XRGB(255, 255, 255));
 
         //	End spriteBrush drawing
 
@@ -553,8 +561,8 @@ bool createDirectX() {
     d3dPP.SwapEffect = D3DSWAPEFFECT_DISCARD;
     d3dPP.BackBufferFormat = D3DFMT_X8R8G8B8;
     d3dPP.BackBufferCount = 1;
-    d3dPP.BackBufferWidth = 1280;
-    d3dPP.BackBufferHeight = 960;
+    d3dPP.BackBufferWidth = 900;
+    d3dPP.BackBufferHeight = 600;
     d3dPP.hDeviceWindow = g_hWnd;
 
 
@@ -571,15 +579,19 @@ bool createDirectX() {
 
 void trackCursorPosition(LPARAM lParam) {
     Sprite* cursor;
+  //  LPPOINT lpPoint = NULL;
+    tagPOINT maybeIsCursor;
+    GetCursorPos(&maybeIsCursor);
+    bool temp = ScreenToClient(g_hWnd,&maybeIsCursor);
     cursor = &sprites.at(getSpriteID(SpriteID::CURSOR));
-    int x = (short)LOWORD(lParam);
-    int y = (short)HIWORD(lParam);
+    //int x = (short)LOWORD(lParam);
+    //int y = (short)HIWORD(lParam);
 
 
     //cout << "System Cursor     X: " << CursorPosition.x << ", Y: " << CursorPosition.y<<endl;
     //cout << "Custom Cursor     X: " << cursor->getSpritePosition().x << ", Y: " << cursor->getSpritePosition().y << endl;
-    cursor->setPositionX(x);
-    cursor->setPositionY(y);
+    cursor->setPositionX(maybeIsCursor.x);
+    cursor->setPositionY(maybeIsCursor.y);
 }
 
 void createWindow() {
