@@ -2,20 +2,20 @@
 
 #include<d3d9.h>
 #include <d3dx9.h>
-class Sprite
+#include "Texture.h"
+#include <string>
+class Sprite:public Texture
 {
 
     private:
-        LPDIRECT3DTEXTURE9 texture;
 
         RECT spriteRect;
         D3DXVECTOR3 spritePosition;
         int spriteVelocity;
     public:
         Sprite();
-        Sprite(LPDIRECT3DTEXTURE9 texture, LPD3DXSPRITE spriteBrush);
-
-        LPDIRECT3DTEXTURE9 getTexture() {return this->texture;}
+        Sprite(LPDIRECT3DTEXTURE9 texture);
+        Sprite(LPDIRECT3DTEXTURE9 texture, std::string path);
 
         RECT getSpriteRect() {return this->spriteRect;}
 
@@ -25,9 +25,6 @@ class Sprite
 
         void setSpriteVelocity(int velocity) {this->spriteVelocity = velocity;}
 
-
-        void setTexture(LPDIRECT3DTEXTURE9 texture) {this->texture = texture;}
-
         void setRectLeft(int left) {this->spriteRect.left = left;}
 
         void setRectRight(int right) {this->spriteRect.right = right;}
@@ -35,7 +32,6 @@ class Sprite
         void setRectTop(int top) {this->spriteRect.top = top;}
 
         void setRectBottom(int bottom) {this->spriteRect.bottom = bottom;}
-
 
         void setPositionX(float x) {this->spritePosition.x = x;}
 

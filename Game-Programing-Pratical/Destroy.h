@@ -1,10 +1,7 @@
 #pragma once
-class Destroy
-{
 
+void cleanUpDirectX();
+void cleanUpWindow();
+void cleanUpSprite();
 
-	void cleanUpDirectX();
-	void cleanUpWindow();
-	void cleanUpSprite();
-};
 

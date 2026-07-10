@@ -3,7 +3,7 @@
 #include "enum.h"
 #include <Windows.h>
 
-bool WindowEvent::windowIsRunning() {
+bool windowIsRunning() {
     MSG msg;
     ZeroMemory(&msg, sizeof(msg));
 
@@ -48,7 +48,7 @@ bool WindowEvent::windowIsRunning() {
 
 
 //	Window Procedure, for event handling
-LRESULT CALLBACK WindowEvent::WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 
     KeyCode pressedKey;

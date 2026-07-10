@@ -3,19 +3,19 @@
 #include <Windows.h>
 #include "Initialization.h"
 
-void Destroy::cleanUpDirectX() {
+void cleanUpDirectX() {
     d3dDevice->Release();//	Release the device when exiting.
     d3dDevice = NULL;//	Reset pointer to NULL, a good practice.
 }
 
-void Destroy::cleanUpWindow() {
+void cleanUpWindow() {
     //	Free up the memory.
     UnregisterClass(wndClass.lpszClassName, GetModuleHandle(NULL));
     return;
 };
 
 
-void Destroy::cleanUpSprite() {
+void cleanUpSprite() {
     if (spriteBrush != nullptr) {
         spriteBrush->Release();
         spriteBrush = NULL;

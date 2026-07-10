@@ -2,7 +2,7 @@
 #include "Initialization.h"
 
 
-void Graphics::render()
+void render()
 {
     //	Clear the back buffer.
     d3dDevice->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(rgb.getRedValue(), rgb.getGreenValue(), rgb.getBlueValue()), 1.0f, 0);

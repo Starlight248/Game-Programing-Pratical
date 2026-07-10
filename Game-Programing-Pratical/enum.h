@@ -1,4 +1,5 @@
 #pragma once
+#include <Windows.h>
 enum class KeyCode
 {
     LEFT_MOUSE_BUTTON = 0x01,
@@ -120,3 +121,7 @@ enum class SpriteID {
 enum class TextureName {
 
 };
+
+LPCSTR getSpriteLocation(SpriteID sprite);
+SpriteID getSpriteEnum(int spriteID);
+int getSpriteID(SpriteID sprite);

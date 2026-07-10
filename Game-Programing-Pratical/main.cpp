@@ -15,7 +15,7 @@
 #include "windowEvent.h"
 #include "Destroy.h"
 #include "Initialization.h"
-
+#include "Graphics.h"
 
 using namespace std;
 
@@ -32,16 +32,6 @@ LPDIRECT3DTEXTURE9 numberTexture;
 RECT numberRect;
 D3DXVECTOR3 numberPosition;
 bool showNumber = false;
-
-void selectNumberRect(int selected) {
-    int top, bottom, left, right;
-    int row = (selected -  1 )/ 4;
-    int col = (selected - 1) % 3;
-    row++;
-    col++;
-    cout << "row: " << row << ", col :" << col << endl;;
-    
-}
 
 //	use int main if you want to have a console to print out message
 //int main()
@@ -62,7 +52,7 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
         //Game->getInput()
         //Game->Physics()
         //Game->render()
-                //	Clear and begin scene
+        //	Clear and begin scene
 
   
         
@@ -86,28 +76,4 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
 
 
 
-
-
-
-
-LPCSTR getSpriteLocation(SpriteID sprite) {
-    switch (sprite) {
-    case SpriteID::CHARACTER: return "image/bg1.png";
-    case SpriteID::CURSOR: return "image/pointer.png";
-    }
-}
-
-SpriteID getSpriteEnum(int spriteID) {
-    switch (spriteID) {
-    case 0: return SpriteID::CHARACTER;
-    case 1: return SpriteID::CURSOR;
-    }
-}
-
-int getSpriteID(SpriteID sprite) {
-    switch (sprite) {
-    case SpriteID::CHARACTER:return 0;
-    case SpriteID::CURSOR: return 1;
-    }
-}
 

@@ -1,8 +1,8 @@
 #include "Initialization.h"
+#include "windowEvent.h"
+#include <iostream>
 
-
-
-void Initialization::createWindow() {
+void createWindow() {
 
     //	Window's structure
 
@@ -44,7 +44,7 @@ void Initialization::createWindow() {
 /*
 Return True if DirectX Succesfully created, else false
 */
-bool Initialization::createDirectX() {
+bool createDirectX() {
     //	Define how the screen presents.
     D3DPRESENT_PARAMETERS d3dPP;
     ZeroMemory(&d3dPP, sizeof(d3dPP));
@@ -73,11 +73,11 @@ bool Initialization::createDirectX() {
 }
 
 
-void Initialization::createSprite() {
+void createSprite() {
     //	Create spriteBrush. Study the documentation. 
     HRESULT hr = D3DXCreateSprite(d3dDevice, &spriteBrush);
     if (FAILED(hr)) {
-        cout << "Error sprite" << endl;
+        std::cout << "Error sprite" << std::endl;
     }
 
     for (int i = 0; i < totalSprites;i++) {

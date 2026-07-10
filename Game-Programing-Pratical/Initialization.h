@@ -20,10 +20,9 @@ extern RECT numberRect;
 extern D3DXVECTOR3 numberPosition;
 extern bool showNumber;
 
-class Initialization
-{
-	bool static createDirectX();
-	void static createWindow();
-	void static createSprite();
-};
+
+bool createDirectX();
+void createWindow();
+void createSprite();
+
 

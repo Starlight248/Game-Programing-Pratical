@@ -5,8 +5,7 @@
 
 
 extern HWND g_hWnd;
-class WindowEvent {
-	bool windowIsRunning();
 
-	LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
-}
+bool windowIsRunning();
+
+LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
