@@ -13,18 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Class">
+      <UniqueIdentifier>{88f1e18a-9690-4763-9dfd-d590d0464ace}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Sprite.cpp">
+    <ClCompile Include="keyPressed.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="RGBColor.cpp">
-      <Filter>Resource Files</Filter>
+      <Filter>Class</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Class</Filter>
     </ClCompile>
     <ClCompile Include="Texture.cpp">
+      <Filter>Class</Filter>
+    </ClCompile>
+    <ClCompile Include="Creater.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>

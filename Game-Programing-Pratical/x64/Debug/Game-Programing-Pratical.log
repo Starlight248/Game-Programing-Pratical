@@ -1,19 +1,15 @@
-﻿  main.cpp
+﻿  Creater.cpp
+  main.cpp
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(11,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(71,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(72,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(73,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(74,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(95,14): warning C4101: 'bottom': unreferenced local variable
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(95,22): warning C4101: 'left': unreferenced local variable
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(95,9): warning C4101: 'top': unreferenced local variable
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(95,28): warning C4101: 'right': unreferenced local variable
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(301,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(302,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-  Texture.cpp
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(52,14): warning C4101: 'bottom': unreferenced local variable
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(52,22): warning C4101: 'left': unreferenced local variable
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(52,9): warning C4101: 'top': unreferenced local variable
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(52,28): warning C4101: 'right': unreferenced local variable
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(171,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(172,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
   Generating Code...
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(754,1): warning C4715: 'getSpriteLocation': not all control paths return a value
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(761,1): warning C4715: 'getSpriteEnum': not all control paths return a value
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(768,1): warning C4715: 'getSpriteID': not all control paths return a value
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(586,1): warning C4715: 'getSpriteLocation': not all control paths return a value
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(593,1): warning C4715: 'getSpriteEnum': not all control paths return a value
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(600,1): warning C4715: 'getSpriteID': not all control paths return a value
   Game-Programing-Pratical.vcxproj -> E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\x64\Debug\Game-Programing-Pratical.exe
