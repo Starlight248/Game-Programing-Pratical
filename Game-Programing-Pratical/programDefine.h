@@ -21,10 +21,10 @@ extern RECT numberRect;
 extern D3DXVECTOR3 numberPosition;
 extern bool showNumber;
 
-void render();
+
 
 void whenKeyPressed(KeyCode pressedKey);
-void cleanUpSprite();
+
 
 enum class KeyCode;
 void trackCursorPosition(LPARAM lParam);

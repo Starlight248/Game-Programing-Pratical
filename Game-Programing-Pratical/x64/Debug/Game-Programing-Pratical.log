@@ -1,15 +1,54 @@
-﻿  Creater.cpp
+﻿  Destroy.cpp
+  Graphics.cpp
+  Initialization.cpp
   main.cpp
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(17,28): error C2065: 'WindowProcedure': undeclared identifier
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(80,9): error C2065: 'cout': undeclared identifier
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(80,35): error C2065: 'endl': undeclared identifier
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(85,27): error C3861: 'getSpriteEnum': identifier not found
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(87,27): error C3861: 'getSpriteLocation': identifier not found
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(99,13): error C3861: 'getSpriteID': identifier not found
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(112,18): error C3861: 'getSpriteID': identifier not found
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(11,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(52,14): warning C4101: 'bottom': unreferenced local variable
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(52,22): warning C4101: 'left': unreferenced local variable
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(52,9): warning C4101: 'top': unreferenced local variable
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(52,28): warning C4101: 'right': unreferenced local variable
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(171,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(172,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(19,1): error C2059: syntax error: 'using namespace'
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(37,1): error C7568: argument list missing after assumed function template 'vector'
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(37,16): error C2371: 'sprites': redefinition; different basic types
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\programDefine.h(15,28):
+      see declaration of 'sprites'
+  
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(38,1): error C7568: argument list missing after assumed function template 'vector'
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(38,17): error C2371: 'textures': redefinition; different basic types
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\programDefine.h(16,29):
+      see declaration of 'textures'
+  
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(52,5): error C2065: 'cout': undeclared identifier
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(52,51): error C2065: 'endl': undeclared identifier
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(63,5): error C3861: 'createWindow': identifier not found
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(64,29): error C3861: 'createDirectX': identifier not found
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(65,5): error C3861: 'createSprite': identifier not found
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(69,12): error C3861: 'windowIsRunning': identifier not found
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(80,9): error C3861: 'render': identifier not found
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(83,5): error C3861: 'cleanUpSprite': identifier not found
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(84,5): error C3861: 'cleanUpWindow': identifier not found
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(85,5): error C3861: 'cleanUpDirectX': identifier not found
+  keyPressed.cpp
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\keyPressed.cpp(18,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\keyPressed.cpp(19,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\keyPressed.cpp(20,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\keyPressed.cpp(21,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  trackMouse.cpp
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\trackMouse.cpp(15,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\trackMouse.cpp(16,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
+  windowEvent.cpp
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\windowEvent.cpp(6,1): error C2628: 'WindowEvent' followed by 'bool' is illegal (did you forget a ';'?)
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\windowEvent.cpp(6,19): error C7754: 'WindowEvent' a type cannot be defined as a return or parameter type
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\windowEvent.cpp(6,19): error C2556: 'WindowEvent WindowEvent::windowIsRunning(void)': overloaded function differs only by return type from 'bool WindowEvent::windowIsRunning(void)'
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\windowEvent.h(7,7):
+      see declaration of 'WindowEvent::windowIsRunning'
+  
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\windowEvent.cpp(6,19): error C2371: 'WindowEvent::windowIsRunning': redefinition; different basic types
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\windowEvent.h(7,7):
+      see declaration of 'WindowEvent::windowIsRunning'
+  
   Generating Code...
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(586,1): warning C4715: 'getSpriteLocation': not all control paths return a value
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(593,1): warning C4715: 'getSpriteEnum': not all control paths return a value
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(600,1): warning C4715: 'getSpriteID': not all control paths return a value
-  Game-Programing-Pratical.vcxproj -> E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\x64\Debug\Game-Programing-Pratical.exe
