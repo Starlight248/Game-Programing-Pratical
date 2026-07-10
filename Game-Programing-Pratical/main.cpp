@@ -18,17 +18,6 @@
 
 
 using namespace std;
-//Class
-//--------------------------------------------------------------------
-
-
-//----------
-
-//class ProgramObject {
-//
-//};
-//Global Var
-//--------------------------------------------------------------------
 
 HWND g_hWnd = NULL; //	Window handle
 WNDCLASS wndClass;
