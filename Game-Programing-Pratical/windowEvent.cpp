@@ -1,7 +1,9 @@
 #include "programDefine.h"
+#include "windowEvent.h"
+#include "enum.h"
+#include <Windows.h>
 
-
-bool windowIsRunning() {
+bool WindowEvent::windowIsRunning() {
     MSG msg;
     ZeroMemory(&msg, sizeof(msg));
 
@@ -43,7 +45,10 @@ bool windowIsRunning() {
     return false;
 }
 
-LRESULT CALLBACK WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+
+
+//	Window Procedure, for event handling
+LRESULT CALLBACK WindowEvent::WindowProcedure(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 
     KeyCode pressedKey;

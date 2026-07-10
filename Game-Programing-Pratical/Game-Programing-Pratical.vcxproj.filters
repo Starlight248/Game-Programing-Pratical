@@ -33,7 +33,13 @@
     <ClCompile Include="Texture.cpp">
       <Filter>Class</Filter>
     </ClCompile>
-    <ClCompile Include="Creater.cpp">
+    <ClCompile Include="creater.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="windowEvent.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="trackMouse.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>

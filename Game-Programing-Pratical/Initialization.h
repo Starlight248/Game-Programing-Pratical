@@ -5,7 +5,6 @@
 #include "enum.h"
 #include "RGBColor.h"
 #include "Sprite.h"
-#include "Destroy.h"
 
 extern HWND g_hWnd;
 extern WNDCLASS wndClass;
@@ -21,16 +20,10 @@ extern RECT numberRect;
 extern D3DXVECTOR3 numberPosition;
 extern bool showNumber;
 
-void render();
+class Initialization
+{
+	bool static createDirectX();
+	void static createWindow();
+	void static createSprite();
+};
 
-void whenKeyPressed(KeyCode pressedKey);
-void cleanUpSprite();
-
-enum class KeyCode;
-void trackCursorPosition(LPARAM lParam);
-void selectNumberRect(int selected);
-
-//will try to became a class
-SpriteID getSpriteEnum(int spriteID);
-LPCSTR getSpriteLocation(SpriteID sprite);
-int getSpriteID(SpriteID sprite);

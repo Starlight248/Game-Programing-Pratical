@@ -151,12 +151,14 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Creater.cpp" />
+    <ClCompile Include="creater.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RGBColor.cpp" />
     <ClCompile Include="keyPressed.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="trackMouse.cpp" />
+    <ClCompile Include="windowEvent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="enum.h" />

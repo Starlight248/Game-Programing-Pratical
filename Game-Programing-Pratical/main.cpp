@@ -12,6 +12,9 @@
 #include "Sprite.h"
 #include "Texture.h"
 #include "programDefine.h"
+#include "windowEvent.h"
+#include "Destroy.h"
+
 using namespace std;
 //Class
 //--------------------------------------------------------------------
@@ -58,22 +61,6 @@ void selectNumberRect(int selected) {
     
 }
 
-void cleanUpSprite() {
-    if (spriteBrush != nullptr) {
-        spriteBrush->Release();
-        spriteBrush=NULL;
-    }
-    while (sprites.size() > 0) {
-        Sprite sprite = sprites.back();
-
-
-        if (sprite.getTexture() != nullptr) {
-            sprite.getTexture()->Release();
-            sprite.setTexture(NULL);
-        }
-        sprites.pop_back();
-    }
-}
 //	use int main if you want to have a console to print out message
 //int main()
 //	use WinMain if you don't want the console
@@ -156,17 +143,6 @@ void render() {
 
 
 
-
-void cleanUpDirectX() {
-    d3dDevice->Release();//	Release the device when exiting.
-    d3dDevice = NULL;//	Reset pointer to NULL, a good practice.
-}
-
-void cleanUpWindow() {
-    //	Free up the memory.
-    UnregisterClass(wndClass.lpszClassName, GetModuleHandle(NULL));
-    return;
-};
 
 LPCSTR getSpriteLocation(SpriteID sprite) {
     switch (sprite) {
