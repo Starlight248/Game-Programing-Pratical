@@ -552,8 +552,8 @@ bool createDirectX() {
     d3dPP.SwapEffect = D3DSWAPEFFECT_DISCARD;
     d3dPP.BackBufferFormat = D3DFMT_X8R8G8B8;
     d3dPP.BackBufferCount = 1;
-    d3dPP.BackBufferWidth = 1280;
-    d3dPP.BackBufferHeight = 960;
+    d3dPP.BackBufferWidth = 900;
+    d3dPP.BackBufferHeight = 600;
     d3dPP.hDeviceWindow = g_hWnd;
 
 

@@ -5,9 +5,10 @@ E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Progra
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(382,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(575,40): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(576,40): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(1033,1): warning C4715: 'getSpriteEnum': not all control paths return a value
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(1026,1): warning C4715: 'getSpriteLocation': not all control paths return a value
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(1040,1): warning C4715: 'getSpriteID': not all control paths return a value
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(232,1): warning C4715: 'RGBColor::checkIncreasement': not all control paths return a value
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(1026,1): warning C4715: 'getSpriteLocation': not all control paths return a value
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(210,1): warning C4715: 'RGBColor::getLastColorAddress': not all control paths return a value
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(1033,1): warning C4715: 'getSpriteEnum': not all control paths return a value
+  LINK : E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\x64\Debug\Game-Programing-Pratical.exe not found or not built by the last incremental link; performing full link
   Game-Programing-Pratical.vcxproj -> E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\x64\Debug\Game-Programing-Pratical.exe
