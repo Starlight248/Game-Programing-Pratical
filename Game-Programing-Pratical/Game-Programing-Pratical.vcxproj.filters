@@ -16,6 +16,9 @@
     <Filter Include="Class">
       <UniqueIdentifier>{88f1e18a-9690-4763-9dfd-d590d0464ace}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Class\ClassHeader">
+      <UniqueIdentifier>{d66a4ed1-b17d-4cbd-afc2-13ee6c274fdd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -53,9 +56,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Sprite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="RGBColor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -63,9 +63,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="programDefine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Initialization.h">
@@ -79,6 +76,12 @@
     </ClInclude>
     <ClInclude Include="Graphics.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Class\ClassHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Class\ClassHeader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

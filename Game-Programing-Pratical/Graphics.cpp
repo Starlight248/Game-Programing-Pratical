@@ -9,7 +9,7 @@ void render()
 
     //	Begin the scene
     d3dDevice->BeginScene();
-    int totalSprites = static_cast<int>(SpriteID::COUNT);
+    int totalSprites = static_cast<int>(TextureType::COUNT);
     spriteBrush->Begin(D3DXSPRITE_ALPHABLEND);
     for (int i = 0;i < totalSprites;i++)
         //	Specify alpha blend will ensure that the spriteBrush will render the background with alpha.

@@ -15,10 +15,10 @@ void whenKeyPressed(KeyCode pressedKey) {
     case KeyCode::KEY_R:        rgb.changeRed(10);break;
     case KeyCode::KEY_B:        rgb.changeBlue(10);break;
     case KeyCode::KEY_G:        rgb.changeGreen(10);break;
-    case KeyCode::UP_ARROW:     targetSprite = &sprites.at(getSpriteID(SpriteID::CHARACTER));targetSprite->decreasePositionY(targetSprite->getSpriteVelocity());break;
-    case KeyCode::DOWN_ARROW:   targetSprite = &sprites.at(getSpriteID(SpriteID::CHARACTER));targetSprite->increasePositionY(targetSprite->getSpriteVelocity());break;
-    case KeyCode::RIGHT_ARROW:  targetSprite = &sprites.at(getSpriteID(SpriteID::CHARACTER));targetSprite->increasePositionX(targetSprite->getSpriteVelocity());break;
-    case KeyCode::LEFT_ARROW:   targetSprite = &sprites.at(getSpriteID(SpriteID::CHARACTER));targetSprite->decreasePositionX(targetSprite->getSpriteVelocity());break;
+    case KeyCode::UP_ARROW:     targetSprite = &sprites.at(getSpriteID(TextureType::CHARACTER));targetSprite->decreasePositionY(targetSprite->getSpriteVelocity());break;
+    case KeyCode::DOWN_ARROW:   targetSprite = &sprites.at(getSpriteID(TextureType::CHARACTER));targetSprite->increasePositionY(targetSprite->getSpriteVelocity());break;
+    case KeyCode::RIGHT_ARROW:  targetSprite = &sprites.at(getSpriteID(TextureType::CHARACTER));targetSprite->increasePositionX(targetSprite->getSpriteVelocity());break;
+    case KeyCode::LEFT_ARROW:   targetSprite = &sprites.at(getSpriteID(TextureType::CHARACTER));targetSprite->decreasePositionX(targetSprite->getSpriteVelocity());break;
     case KeyCode::KEY_0:        selectNumberRect(0);break;
     case KeyCode::KEY_1:        selectNumberRect(1);break;
     case KeyCode::KEY_2:        selectNumberRect(2);break;

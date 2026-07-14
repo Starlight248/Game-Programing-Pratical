@@ -31,6 +31,6 @@ void trackCursorPosition(LPARAM lParam);
 void selectNumberRect(int selected);
 
 //will try to became a class
-SpriteID getSpriteEnum(int spriteID);
-LPCSTR getSpriteLocation(SpriteID sprite);
-int getSpriteID(SpriteID sprite);
+TextureType getSpriteEnum(int spriteID);
+LPCSTR getSpriteLocation(TextureType sprite);
+int getSpriteID(TextureType sprite);

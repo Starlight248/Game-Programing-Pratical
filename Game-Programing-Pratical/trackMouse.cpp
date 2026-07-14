@@ -5,7 +5,7 @@ void trackCursorPosition(LPARAM lParam) {
     tagPOINT maybeIsCursor;
     GetCursorPos(&maybeIsCursor);
     bool temp = ScreenToClient(g_hWnd, &maybeIsCursor);
-    cursor = &sprites.at(getSpriteID(SpriteID::CURSOR));
+    cursor = &sprites.at(getSpriteID(TextureType::CURSOR));
     //int x = (short)LOWORD(lParam);
     //int y = (short)HIWORD(lParam);
 

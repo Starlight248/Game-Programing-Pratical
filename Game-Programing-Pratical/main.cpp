@@ -26,7 +26,7 @@ LPD3DXSPRITE spriteBrush;
 RGBColor rgb = RGBColor();
 vector<Sprite> sprites = {};
 vector<Texture> textures = {};
-int totalSprites = static_cast<int>(SpriteID::COUNT);
+int totalSprites = static_cast<int>(TextureType::COUNT);
 POINT CursorPosition;
 LPDIRECT3DTEXTURE9 numberTexture;
 RECT numberRect;

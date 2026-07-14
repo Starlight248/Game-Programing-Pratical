@@ -1,23 +1,23 @@
 
 #include "enum.h"
 
-LPCSTR getSpriteLocation(SpriteID sprite) {
+LPCSTR getSpriteLocation(TextureType sprite) {
     switch (sprite) {
-    case SpriteID::CHARACTER: return "image/bg1.png";
-    case SpriteID::CURSOR: return "image/pointer.png";
+    case TextureType::CHARACTER: return "image/bg1.png";
+    case TextureType::CURSOR: return "image/pointer.png";
     }
 }
 
-SpriteID getSpriteEnum(int spriteID) {
+TextureType getSpriteEnum(int spriteID) {
     switch (spriteID) {
-    case 0: return SpriteID::CHARACTER;
-    case 1: return SpriteID::CURSOR;
+    case 0: return TextureType::CHARACTER;
+    case 1: return TextureType::CURSOR;
     }
 }
 
-int getSpriteID(SpriteID sprite) {
+int getSpriteID(TextureType sprite) {
     switch (sprite) {
-    case SpriteID::CHARACTER:return 0;
-    case SpriteID::CURSOR: return 1;
+    case TextureType::CHARACTER:return 0;
+    case TextureType::CURSOR: return 1;
     }
 }

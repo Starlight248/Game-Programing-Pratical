@@ -82,7 +82,7 @@ void createSprite() {
 
     for (int i = 0; i < totalSprites;i++) {
         Sprite newSprite = Sprite();
-        SpriteID sprite = getSpriteEnum(i);
+        TextureType sprite = getSpriteEnum(i);
         LPDIRECT3DTEXTURE9 tempTexture = NULL;
         LPCSTR location = getSpriteLocation(sprite);
 
@@ -96,7 +96,7 @@ void createSprite() {
 
         //	Specify the "	" rectangle.
         newSprite.setTexture(tempTexture);
-        if (getSpriteID(SpriteID::CHARACTER) == i)
+        if (getSpriteID(TextureType::CHARACTER) == i)
         {
             newSprite.setRectLeft(44);
             newSprite.setRectRight(107);
@@ -109,7 +109,7 @@ void createSprite() {
 
             newSprite.setSpriteVelocity(5);
         }
-        else if (getSpriteID(SpriteID::CURSOR) == i) {
+        else if (getSpriteID(TextureType::CURSOR) == i) {
             newSprite.setRectLeft(0);
             newSprite.setRectRight(24);
             newSprite.setRectTop(0);
