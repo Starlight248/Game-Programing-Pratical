@@ -19,16 +19,16 @@ void whenKeyPressed(KeyCode pressedKey) {
     //case KeyCode::DOWN_ARROW:   targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->increasePositionY(targetSprite->getSpriteVelocity());break;
     //case KeyCode::RIGHT_ARROW:  targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->increasePositionX(targetSprite->getSpriteVelocity());break;
     //case KeyCode::LEFT_ARROW:   targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->decreasePositionX(targetSprite->getSpriteVelocity());break;
-    //case KeyCode::KEY_0:        selectNumberRect(0);break;
-    //case KeyCode::KEY_1:        selectNumberRect(1);break;
-    //case KeyCode::KEY_2:        selectNumberRect(2);break;
-    //case KeyCode::KEY_3:        selectNumberRect(3);break;
-    //case KeyCode::KEY_4:        selectNumberRect(4);break;
-    //case KeyCode::KEY_5:        selectNumberRect(5);break;
-    //case KeyCode::KEY_6:        selectNumberRect(6);break;
-    //case KeyCode::KEY_7:        selectNumberRect(7);break;
-    //case KeyCode::KEY_8:        selectNumberRect(8);break;
-    //case KeyCode::KEY_9:        selectNumberRect(9);break;
+    case KeyCode::KEY_0:        changeRect(loopSpriteVector(SpriteType::NUM), 1, 4, 4); break;
+    case KeyCode::KEY_1:        changeRect(loopSpriteVector(SpriteType::NUM), 2, 4, 4); break;
+    case KeyCode::KEY_2:        changeRect(loopSpriteVector(SpriteType::NUM), 3, 4, 4); break;
+    case KeyCode::KEY_3:        changeRect(loopSpriteVector(SpriteType::NUM), 4, 4, 4); break;
+    case KeyCode::KEY_4:        changeRect(loopSpriteVector(SpriteType::NUM), 5, 4, 4); break;
+    case KeyCode::KEY_5:        changeRect(loopSpriteVector(SpriteType::NUM), 6, 4, 4); break;
+    case KeyCode::KEY_6:        changeRect(loopSpriteVector(SpriteType::NUM), 7, 4, 4); break;
+    case KeyCode::KEY_7:        changeRect(loopSpriteVector(SpriteType::NUM), 8, 4, 4); break;
+    case KeyCode::KEY_8:        changeRect(loopSpriteVector(SpriteType::NUM), 9, 4, 4); break;
+    case KeyCode::KEY_9:        changeRect(loopSpriteVector(SpriteType::NUM), 10, 4, 4); break;
 
     }
 

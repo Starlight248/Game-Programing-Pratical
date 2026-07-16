@@ -114,6 +114,7 @@ enum class KeyCode
 enum class TextureType {
     BG1,
     CURSOR,
+    NUMBER,
 
     COUNT,//This must Be last element.
 
@@ -122,6 +123,7 @@ enum class TextureType {
 enum class SpriteType {
     CHARACTER,
     CURSOR,
+    NUM,
 
     COUNT,//This must Be last element.
 };

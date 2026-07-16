@@ -120,9 +120,9 @@ void createSprite() {
         std::cout << "Error sprite" << std::endl;
     }
 	SpriteConfig config;
-    loadSprite(SpriteType::CHARACTER,TextureType::BG1, 44,107,157,201,100,100,0,5);
+    loadSprite(SpriteType::CHARACTER,TextureType::CURSOR, 44,107,157,201,100,100,0,5);
 	loadSprite(SpriteType::CURSOR, TextureType::CURSOR, 0, 24, 0, 24, 100, 100, 0, 0);
-
+	loadSprite(SpriteType::NUM, TextureType::NUMBER, 0, 32, 0, 32, 300, 400, 0, 0);
 
     //for (int i = 0; i < totalSprites;i++) {
         //Sprite newSprite = Sprite();
@@ -164,7 +164,6 @@ void createSprite() {
         //    newSprite.setPositionZ(0);
         //}
         //sprites.push_back(newSprite);
-
     ////}
 
     //hr = D3DXCreateTextureFromFile(d3dDevice, "image/numbers.bmp", &numberTexture);
@@ -180,6 +179,7 @@ void createTexture()
 {
     storeTexture(TextureType::BG1, "image/bg1.png", 512, 512);
     storeTexture(TextureType::CURSOR, "image/pointer.png", 32, 32);
+	storeTexture(TextureType::NUMBER, "image/numbers.bmp", 128, 128);
     
 }
 

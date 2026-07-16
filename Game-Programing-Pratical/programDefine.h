@@ -29,6 +29,8 @@ void whenKeyPressed(KeyCode pressedKey);
 enum class KeyCode;
 void trackCursorPosition(LPARAM lParam);
 void selectNumberRect(int selected);
+Sprite loopSpriteVector(SpriteType spriteType);
+void changeRect(Sprite sprite, int selectedAreaNumber, int textureRow, int textureColumn);
 
 //will try to became a class
 //TextureType getSpriteEnum(int spriteID);

@@ -5,8 +5,8 @@ class Texture {
 private:
     LPDIRECT3DTEXTURE9 texture;
     std::string path;
-    const int horizontalPixel;
-    const int verticalPixel;
+    const int horizontalPixel;//x
+    const int verticalPixel;//y
     
 public:
 	Texture() : texture(nullptr), path(""), horizontalPixel(0), verticalPixel(0) {}
@@ -20,9 +20,9 @@ public:
     void setPath(std::string path) {/*
         only able to set when not path existing*/if (this->path == "") this->path = path; }
     
-    int getHorizontalPixel() { return this->horizontalPixel; }
+    int getHorizontalPixel() { return this->horizontalPixel; }//x
 
-    int getVerticalPixel() { return this->verticalPixel; }
+    int getVerticalPixel() { return this->verticalPixel; }//y
 
     LPCSTR getLocation() const {
         return path.c_str();
