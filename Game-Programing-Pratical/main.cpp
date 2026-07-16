@@ -26,7 +26,7 @@ LPD3DXSPRITE spriteBrush;
 RGBColor rgb = RGBColor();
 map<TextureType, Texture> textureType;
 vector<Sprite> sprites = {};
-vector<Texture> textures = {};
+//vector<Texture> textures = {};
 int totalSprites = static_cast<int>(TextureType::COUNT);
 POINT CursorPosition;
 LPDIRECT3DTEXTURE9 numberTexture;
@@ -63,6 +63,7 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
 
     }
     cleanUpSprite();
+    cleanUpTextures();
     cleanUpWindow();
     cleanUpDirectX();
     //	Release and clean up everything

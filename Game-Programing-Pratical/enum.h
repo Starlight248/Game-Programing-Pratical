@@ -112,13 +112,16 @@ enum class KeyCode
 
 
 enum class TextureType {
-    CHARACTER,
+    BG1,
     CURSOR,
 
-    COUNT, //This must Be last element.
+    COUNT,//This must Be last element.
 
 };
 
-//LPCSTR getSpriteLocation(TextureType sprite);
-//TextureType getSpriteEnum(int spriteID);
-//int getSpriteID(TextureType sprite);
+enum class SpriteType {
+    CHARACTER,
+    CURSOR,
+
+    COUNT,//This must Be last element.
+};

@@ -16,7 +16,7 @@ void render()
     {
         Sprite currentSprite = sprites.at(i);
         RECT spriteRect = currentSprite.getSpriteRect();
-        LPDIRECT3DTEXTURE9 texture = currentSprite.getTexture();
+        LPDIRECT3DTEXTURE9 texture = (*currentSprite.getTextureAddress()).getTexture();
         D3DXVECTOR3 spritePosition = currentSprite.getSpritePosition();
 
 

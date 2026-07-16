@@ -3,16 +3,17 @@
 #include <string>
 class Texture {
 private:
-    const LPDIRECT3DTEXTURE9 texture;
+    LPDIRECT3DTEXTURE9 texture;
     std::string path;
     const int horizontalPixel;
     const int verticalPixel;
     
 public:
+	Texture() : texture(nullptr), path(""), horizontalPixel(0), verticalPixel(0) {}
     Texture(LPDIRECT3DTEXTURE9 texture, std::string path, int horizontalPixel , int verticalPixel);
     Texture(LPDIRECT3DTEXTURE9 texture, int horizontalPixel, int verticalPixel);
 
-    LPDIRECT3DBASETEXTURE9 getTexture() { return this->texture; }
+    LPDIRECT3DTEXTURE9 getTexture() { return this->texture; }
 
     std::string getPath() { return this->path; }
     
@@ -25,5 +26,12 @@ public:
 
     LPCSTR getLocation() const {
         return path.c_str();
+    }
+
+    void releaseTexture() {
+        if (this->texture != NULL) {
+            this->texture->Release();
+            this->texture = NULL;
+        }
     }
 };

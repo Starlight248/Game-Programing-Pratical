@@ -2,11 +2,11 @@
 #include "Texture.h"
 #include <string>
 
-Sprite::Sprite() :textureAddress(), spriteRect(), spritePosition(), spriteVelocity(0) {
+Sprite::Sprite() :textureAddress(), spriteRect(), spritePosition(), spriteVelocity(0) ,isActive(false){
 }
 
 Sprite::Sprite(Texture* texture) 
-:textureAddress(texture), spriteRect(), spritePosition(), spriteVelocity(0)
+:textureAddress(texture), spriteRect(), spritePosition(), spriteVelocity(0), isActive(false)
 {
 }
 

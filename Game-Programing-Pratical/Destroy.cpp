@@ -20,14 +20,10 @@ void cleanUpSprite() {
         spriteBrush->Release();
         spriteBrush = NULL;
     }
-    while (sprites.size() > 0) {
-        Sprite sprite = sprites.back();
+}
 
-
-        if (sprite.getTexture() != nullptr) {
-            sprite.getTexture()->Release();
-            sprite.setTexture(NULL);
-        }
-        sprites.pop_back();
-    }
+void cleanUpTextures() {
+	for (auto& [textureType, texture] : textureType) {
+		texture.releaseTexture();
+	}   
 }

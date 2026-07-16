@@ -3,6 +3,8 @@
 #include <iostream>
 
 
+void storeTexture(TextureType enumTextureType, std::string location, int width, int height);
+
 void createWindow() {
 
     //	Window's structure
@@ -73,14 +75,53 @@ bool createDirectX() {
     }
 }
 
+struct SpriteConfig
+{
+    int rectLeft = 0, rectTop = 0, rectRight = 0, rectBottom = 0;
+    int posX = 0, posY = 0, posZ = 0;
+    int speed = 0;
+};
+
+void loadSprite(
+    SpriteType spriteType,TextureType enumTextureType,
+    int rectLeft = 0, int rectRight = 0, int rectTop = 0, int rectBottom = 0,
+    int positionX = 0, int positionY = 0, int positionZ = 0,
+    int spriteVelocity = 0,
+    int RGB_R = 255, int RGB_G = 255, int RGB_B = 255
+) {
+    Sprite newSprite = Sprite();
+
+	newSprite.setSpriteType(spriteType);
+    
+    newSprite.setTextureAddress(&(textureType[enumTextureType]));
+
+    newSprite.setRectLeft(rectLeft);
+    newSprite.setRectRight(rectRight);
+    newSprite.setRectTop(rectTop);
+    newSprite.setRectBottom(rectBottom);
+
+	newSprite.setPositionX(positionX);
+	newSprite.setPositionY(positionY);
+	newSprite.setPositionZ(positionZ);
+
+	newSprite.setPositionX(0);
+	newSprite.setPositionY(0);
+	newSprite.setPositionZ(0);
+	
+
+	newSprite.setSpriteVelocity(spriteVelocity);
+
+    sprites.push_back(newSprite);
+}
 
 void createSprite() {
-    //	Create spriteBrush. Study the documentation. 
     HRESULT hr = D3DXCreateSprite(d3dDevice, &spriteBrush);
     if (FAILED(hr)) {
         std::cout << "Error sprite" << std::endl;
     }
-
+	SpriteConfig config;
+    loadSprite(SpriteType::CHARACTER,TextureType::BG1, 44,107,157,201,100,100,0,5);
+	loadSprite(SpriteType::CURSOR, TextureType::CURSOR, 0, 24, 0, 24, 100, 100, 0, 0);
 
 
     //for (int i = 0; i < totalSprites;i++) {
@@ -99,7 +140,7 @@ void createSprite() {
 
         ////	Specify the "	" rectangle.
         //newSprite.setTexture(tempTexture);
-        //if (getSpriteID(TextureType::CHARACTER) == i)
+        //if (getSpriteID(TextureType::BG1) == i)
         //{
         //    newSprite.setRectLeft(44);
         //    newSprite.setRectRight(107);
@@ -133,21 +174,23 @@ void createSprite() {
 
 }
 
+
+
 void createTexture()
 {
-    //	Create spriteBrush. Study the documentation. 
-    HRESULT hr = D3DXCreateSprite(d3dDevice, &spriteBrush);
-    if (FAILED(hr)) {
-        std::cout << "Error sprite" << std::endl;
+    storeTexture(TextureType::BG1, "image/bg1.png", 512, 512);
+    storeTexture(TextureType::CURSOR, "image/pointer.png", 32, 32);
+    
+}
+
+void storeTexture(TextureType enumTextureType, std::string location, int width, int height) {
+    LPDIRECT3DTEXTURE9 tempTexture = nullptr;
+    HRESULT hr = D3DXCreateTextureFromFile(d3dDevice, location.c_str(), &tempTexture);
+    if (SUCCEEDED(hr)) {
+        Texture tempOfTexture = Texture(tempTexture, location, 32, 32);
+        textureType.insert({ enumTextureType ,tempOfTexture });
     }
-    
-    
-    std::string location = "image/pointer.png";
-
-    LPDIRECT3DTEXTURE9 tempTexture = NULL;
-   
-    Texture tempOfTexture = Texture(tempTexture,location,32,32);
-    textureType.insert({ TextureType::CHARACTER,tempOfTexture });
-
-    hr = D3DXCreateTextureFromFile(d3dDevice,textureType.at(TextureType::CHARACTER).getLocation(), &tempTexture);
+    else {
+        std::cout << "Failed to load texture: " << location << std::endl;
+    }
 }

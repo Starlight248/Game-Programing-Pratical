@@ -152,7 +152,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Destroy.cpp" />
-    <ClCompile Include="GameDefine.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Initialization.cpp" />
     <ClCompile Include="main.cpp" />
