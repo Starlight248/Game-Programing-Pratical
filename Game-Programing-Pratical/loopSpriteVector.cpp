@@ -1,6 +1,6 @@
 #include "programDefine.h"
 
-Sprite loopSpriteVector(SpriteType spriteType) {
+Sprite* loopSpriteVector(SpriteType spriteType) {
     Sprite* targetSprite = nullptr;
     //  LPPOINT lpPoint = NULL;
 
@@ -11,6 +11,6 @@ Sprite loopSpriteVector(SpriteType spriteType) {
         }
     }
 
-    if (targetSprite == nullptr) return Sprite();
-    return *targetSprite;
+    if (targetSprite == nullptr) return nullptr;
+    return targetSprite;
 }
