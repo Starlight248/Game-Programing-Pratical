@@ -16,9 +16,14 @@ public:
 
     std::string getPath() { return this->path; }
     
-    void setPath(std::string path) {/*only able to set when not path existing*/ if (this->path == "") this->path = path; }
+    void setPath(std::string path) {/*
+        only able to set when not path existing*/if (this->path == "") this->path = path; }
     
     int getHorizontalPixel() { return this->horizontalPixel; }
 
     int getVerticalPixel() { return this->verticalPixel; }
+
+    LPCSTR getLocation() const {
+        return path.c_str();
+    }
 };

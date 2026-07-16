@@ -5,6 +5,7 @@
 #include "enum.h"
 #include "RGBColor.h"
 #include "Sprite.h"
+#include <map>
 
 extern HWND g_hWnd;
 extern WNDCLASS wndClass;
@@ -19,10 +20,12 @@ extern LPDIRECT3DTEXTURE9 numberTexture;
 extern RECT numberRect;
 extern D3DXVECTOR3 numberPosition;
 extern bool showNumber;
+extern std::map <TextureType, Texture>textureType;
 
 
 bool createDirectX();
 void createWindow();
 void createSprite();
+void createTexture();
 
 

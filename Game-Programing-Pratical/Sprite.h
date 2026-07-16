@@ -7,14 +7,14 @@
 class Sprite{
 
 private:
-    Texture* texture;
+    Texture* textureAddress;
     RECT spriteRect;
     D3DXVECTOR3 spritePosition;
     int spriteVelocity;
 public:
     Sprite();
     Sprite(Texture* texture);
-    //Sprite(LPDIRECT3DTEXTURE9* texture, std::string path);
+    //Sprite(LPDIRECT3DTEXTURE9* textureAddress, std::string path);
 
     RECT getSpriteRect() { return this->spriteRect; }
 

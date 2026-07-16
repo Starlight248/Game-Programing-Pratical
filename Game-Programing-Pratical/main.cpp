@@ -5,7 +5,7 @@
 #include<iostream>
 #include <d3dx9.h>
 #include <vector>
-
+#include <map>
 
 #include "enum.h";
 #include "RGBColor.h";
@@ -24,6 +24,7 @@ WNDCLASS wndClass;
 IDirect3DDevice9* d3dDevice;
 LPD3DXSPRITE spriteBrush;
 RGBColor rgb = RGBColor();
+map<TextureType, Texture> textureType;
 vector<Sprite> sprites = {};
 vector<Texture> textures = {};
 int totalSprites = static_cast<int>(TextureType::COUNT);
@@ -42,6 +43,7 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
 
     createWindow();
     bool isDirectXCreated = createDirectX();
+    createTexture();
     createSprite();
 
 

@@ -2,6 +2,7 @@
 #include "windowEvent.h"
 #include <iostream>
 
+
 void createWindow() {
 
     //	Window's structure
@@ -80,52 +81,73 @@ void createSprite() {
         std::cout << "Error sprite" << std::endl;
     }
 
-    for (int i = 0; i < totalSprites;i++) {
-        Sprite newSprite = Sprite();
-        TextureType sprite = getSpriteEnum(i);
-        LPDIRECT3DTEXTURE9 tempTexture = NULL;
-        LPCSTR location = getSpriteLocation(sprite);
 
 
-        //	Create Texture. Study the documentation.
-        hr = D3DXCreateTextureFromFile(d3dDevice, location, &tempTexture);
-        //hr = D3DXCreateTextureFromFileEx(/* Your Direct3D device */, "01.bmp", D3DX_DEFAULT, D3DX_DEFAULT, 
-        //									D3DX_DEFAULT, NULL, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, 
-        //									D3DX_DEFAULT, D3DX_DEFAULT, D3DCOLOR_XRGB(255, 255, 255), 
-        //									NULL, NULL, &Texture);
+    //for (int i = 0; i < totalSprites;i++) {
+        //Sprite newSprite = Sprite();
+        //TextureType sprite = getSpriteEnum(i);
+        //LPDIRECT3DTEXTURE9 tempTexture = NULL;
+        //LPCSTR location = getSpriteLocation(sprite);
 
-        //	Specify the "	" rectangle.
-        newSprite.setTexture(tempTexture);
-        if (getSpriteID(TextureType::CHARACTER) == i)
-        {
-            newSprite.setRectLeft(44);
-            newSprite.setRectRight(107);
-            newSprite.setRectTop(157);
-            newSprite.setRectBottom(201);
 
-            newSprite.setPositionX(100);
-            newSprite.setPositionY(100);
-            newSprite.setPositionZ(0);
+        ////	Create Texture. Study the documentation.
+        //hr = D3DXCreateTextureFromFile(d3dDevice, location, &tempTexture);
+        ////hr = D3DXCreateTextureFromFileEx(/* Your Direct3D device */, "01.bmp", D3DX_DEFAULT, D3DX_DEFAULT, 
+        ////									D3DX_DEFAULT, NULL, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, 
+        ////									D3DX_DEFAULT, D3DX_DEFAULT, D3DCOLOR_XRGB(255, 255, 255), 
+        ////									NULL, NULL, &Texture);
 
-            newSprite.setSpriteVelocity(5);
-        }
-        else if (getSpriteID(TextureType::CURSOR) == i) {
-            newSprite.setRectLeft(0);
-            newSprite.setRectRight(24);
-            newSprite.setRectTop(0);
-            newSprite.setRectBottom(24);
+        ////	Specify the "	" rectangle.
+        //newSprite.setTexture(tempTexture);
+        //if (getSpriteID(TextureType::CHARACTER) == i)
+        //{
+        //    newSprite.setRectLeft(44);
+        //    newSprite.setRectRight(107);
+        //    newSprite.setRectTop(157);
+        //    newSprite.setRectBottom(201);
 
-            newSprite.setPositionX(100);
-            newSprite.setPositionY(100);
-            newSprite.setPositionZ(0);
-        }
-        sprites.push_back(newSprite);
+        //    newSprite.setPositionX(100);
+        //    newSprite.setPositionY(100);
+        //    newSprite.setPositionZ(0);
 
+        //    newSprite.setSpriteVelocity(5);
+        //}
+        //else if (getSpriteID(TextureType::CURSOR) == i) {
+        //    newSprite.setRectLeft(0);
+        //    newSprite.setRectRight(24);
+        //    newSprite.setRectTop(0);
+        //    newSprite.setRectBottom(24);
+
+        //    newSprite.setPositionX(100);
+        //    newSprite.setPositionY(100);
+        //    newSprite.setPositionZ(0);
+        //}
+        //sprites.push_back(newSprite);
+
+    ////}
+
+    //hr = D3DXCreateTextureFromFile(d3dDevice, "image/numbers.bmp", &numberTexture);
+    //numberPosition.x = 300;
+    //numberPosition.y = 400;
+    //numberRect.left = numberRect.right = numberRect.top = numberRect.bottom = 0;
+
+}
+
+void createTexture()
+{
+    //	Create spriteBrush. Study the documentation. 
+    HRESULT hr = D3DXCreateSprite(d3dDevice, &spriteBrush);
+    if (FAILED(hr)) {
+        std::cout << "Error sprite" << std::endl;
     }
+    
+    
+    std::string location = "image/pointer.png";
 
-    hr = D3DXCreateTextureFromFile(d3dDevice, "image/numbers.bmp", &numberTexture);
-    numberPosition.x = 300;
-    numberPosition.y = 400;
-    numberRect.left = numberRect.right = numberRect.top = numberRect.bottom = 0;
+    LPDIRECT3DTEXTURE9 tempTexture = NULL;
+   
+    Texture tempOfTexture = Texture(tempTexture,location,32,32);
+    textureType.insert({ TextureType::CHARACTER,tempOfTexture });
 
+    hr = D3DXCreateTextureFromFile(d3dDevice,textureType.at(TextureType::CHARACTER).getLocation(), &tempTexture);
 }

@@ -13,10 +13,10 @@ Texture::Texture(LPDIRECT3DTEXTURE9 texture, int horizontalPixel, int verticalPi
 //	if (this->path == "") this->path = path;
 //}
 
-//Texture::Texture(LPDIRECT3DTEXTURE9 texture, std::string path):texture(texture),path(path)
+//Texture::Texture(LPDIRECT3DTEXTURE9 textureAddress, std::string path):textureAddress(textureAddress),path(path)
 //{
 //}
-//Texture::Texture(LPDIRECT3DTEXTURE9 texture):texture(texture)
+//Texture::Texture(LPDIRECT3DTEXTURE9 textureAddress):textureAddress(textureAddress)
 //{
 //}
 

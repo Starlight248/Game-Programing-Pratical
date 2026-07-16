@@ -1,26 +1,49 @@
 ﻿  Destroy.cpp
   Graphics.cpp
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Destroy.cpp(27,20): error C2039: 'getTexture': is not a member of 'Sprite'
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(7,7):
+      see declaration of 'Sprite'
+  
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Destroy.cpp(28,20): error C2039: 'getTexture': is not a member of 'Sprite'
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(7,7):
+      see declaration of 'Sprite'
+  
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Destroy.cpp(29,20): error C2039: 'setTexture': is not a member of 'Sprite'
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(7,7):
+      see declaration of 'Sprite'
+  
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Graphics.cpp(19,52): error C2039: 'getTexture': is not a member of 'Sprite'
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(7,7):
+      see declaration of 'Sprite'
+  
   Initialization.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Graphics.cpp(19,36): error C2440: 'initializing': cannot convert from 'LPDIRECT3DBASETEXTURE9' to 'LPDIRECT3DTEXTURE9'
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Graphics.cpp(19,36):
-      Cast from base to derived requires dynamic_cast or static_cast
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(145,29): error C2228: left of '.CHARACTER' must have class/struct/union
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(145,29):
+      type is 'TextureType'
   
-  Sprite.cpp
-  Texture.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Texture.cpp(4,10): error C2084: function 'Texture::Texture(void)' already has a body
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Texture.h(10,5):
-      see previous definition of 'Texture::Texture'
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(145,38): error C7732: expected an expression before ']'
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(145,5): error C2679: binary '[': no operator found which takes a right-hand operand of type 'int' (or there is no acceptable conversion)
+      D:\Visual Studio 2026\VC\Tools\MSVC\14.51.36231\include\map(345,18):
+      could be 'Texture &std::map<TextureType,Texture,std::less<TextureType>,std::allocator<std::pair<const TextureType,Texture>>>::operator [](const TextureType &)'
+          E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(145,5):
+          'Texture &std::map<TextureType,Texture,std::less<TextureType>,std::allocator<std::pair<const TextureType,Texture>>>::operator [](const TextureType &)': cannot convert argument 2 from 'int' to 'const TextureType &'
+              E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(145,38):
+              Reason: cannot convert from 'int' to 'const TextureType'
+              E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(145,38):
+              Conversion to enumeration type requires an explicit cast (static_cast, C-style cast or parenthesized function-style cast)
+      D:\Visual Studio 2026\VC\Tools\MSVC\14.51.36231\include\map(174,18):
+      or       'Texture &std::map<TextureType,Texture,std::less<TextureType>,std::allocator<std::pair<const TextureType,Texture>>>::operator [](TextureType &&)'
+          E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(145,5):
+          'Texture &std::map<TextureType,Texture,std::less<TextureType>,std::allocator<std::pair<const TextureType,Texture>>>::operator [](TextureType &&)': cannot convert argument 2 from 'int' to 'TextureType &&'
+              E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(145,38):
+              Reason: cannot convert from 'int' to 'TextureType'
+              E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(145,38):
+              Conversion to enumeration type requires an explicit cast (static_cast, C-style cast or parenthesized function-style cast)
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(145,5):
+      while trying to match the argument list '(std::map<TextureType,Texture,std::less<TextureType>,std::allocator<std::pair<const TextureType,Texture>>>, int)'
   
-  keyPressed.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\keyPressed.cpp(18,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\keyPressed.cpp(19,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\keyPressed.cpp(20,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\keyPressed.cpp(21,157): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   main.cpp
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(11,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  trackMouse.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\trackMouse.cpp(15,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\trackMouse.cpp(16,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
   windowEvent.cpp
   Generating Code...

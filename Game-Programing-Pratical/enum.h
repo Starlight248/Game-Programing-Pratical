@@ -119,6 +119,6 @@ enum class TextureType {
 
 };
 
-LPCSTR getSpriteLocation(TextureType sprite);
-TextureType getSpriteEnum(int spriteID);
-int getSpriteID(TextureType sprite);
+//LPCSTR getSpriteLocation(TextureType sprite);
+//TextureType getSpriteEnum(int spriteID);
+//int getSpriteID(TextureType sprite);
