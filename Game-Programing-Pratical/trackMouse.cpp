@@ -1,5 +1,7 @@
 #include "programDefine.h"
 #include "enum.h"
+#include <string>
+#include <format>
 void trackCursorPosition(LPARAM lParam) {
     Sprite* cursor = nullptr;
     //  LPPOINT lpPoint = NULL;
@@ -22,4 +24,11 @@ void trackCursorPosition(LPARAM lParam) {
     //cout << "Custom Cursor     X: " << cursor->getSpritePosition().x << ", Y: " << cursor->getSpritePosition().y << endl;
     cursor->setPositionX(maybeIsCursor.x);
     cursor->setPositionY(maybeIsCursor.y);
+    int x = maybeIsCursor.x;
+    int y = maybeIsCursor.y;
+    std::string* fontPtr = &font;
+    *fontPtr = std::format("x: {:d}, y: {:d}",x,y);
+    //font = "x: " + x + ", y: ";
+    return;
+
 }

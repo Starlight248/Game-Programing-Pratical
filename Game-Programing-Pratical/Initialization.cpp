@@ -186,6 +186,10 @@ void createTexture()
 void storeTexture(TextureType enumTextureType, std::string location, int width, int height) {
     LPDIRECT3DTEXTURE9 tempTexture = nullptr;
     HRESULT hr = D3DXCreateTextureFromFile(d3dDevice, location.c_str(), &tempTexture);
+    //hr = D3DXCreateTextureFromFileEx(/* Your Direct3D device */, "01.bmp", D3DX_DEFAULT, D3DX_DEFAULT, 
+    //									D3DX_DEFAULT, NULL, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, 
+    //									D3DX_DEFAULT, D3DX_DEFAULT, D3DCOLOR_XRGB(255, 255, 255), 
+    //									NULL, NULL, &texture);
     if (SUCCEEDED(hr)) {
         Texture tempOfTexture = Texture(tempTexture, location, 32, 32);
         textureType.insert({ enumTextureType ,tempOfTexture });

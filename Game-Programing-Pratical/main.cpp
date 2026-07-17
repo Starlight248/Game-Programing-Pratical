@@ -34,6 +34,14 @@ RECT numberRect;
 D3DXVECTOR3 numberPosition;
 bool showNumber = false;
 
+    LPD3DXFONT fontBrush = NULL;
+    RECT textRect;
+    string font = "";
+    LPD3DXLINE line = NULL;
+    //	Define the line vertices.
+    vector<D3DXVECTOR2> lineVertices;
+
+
 //	use int main if you want to have a console to print out message
 //int main()
 //	use WinMain if you don't want the console
@@ -45,6 +53,23 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
     bool isDirectXCreated = createDirectX();
     createTexture();
     createSprite();
+
+    {
+        textRect.left = 0;
+        textRect.top = 0;
+        textRect.right = 500;
+        textRect.bottom = 500;
+    }
+    
+    {
+        //	Create font. Study the documentation.
+        HRESULT hr = D3DXCreateFont(d3dDevice, 25, 0, 0, 1, false,
+            DEFAULT_CHARSET, OUT_TT_ONLY_PRECIS, DEFAULT_QUALITY,
+            DEFAULT_PITCH | FF_DONTCARE, "Arial", &fontBrush);
+        //	Create line
+        hr = D3DXCreateLine(d3dDevice, &line);
+        drawClock();
+    }
 
 
     //TODO
@@ -66,6 +91,11 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
     cleanUpTextures();
     cleanUpWindow();
     cleanUpDirectX();
+    //
+    {
+        fontBrush->Release();
+        fontBrush = NULL;
+    }
     //	Release and clean up everything
 
 

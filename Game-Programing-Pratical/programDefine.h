@@ -6,6 +6,7 @@
 #include "RGBColor.h"
 #include "Sprite.h"
 #include "Destroy.h"
+#include <string>
 
 extern HWND g_hWnd;
 extern WNDCLASS wndClass;
@@ -20,6 +21,9 @@ extern LPDIRECT3DTEXTURE9 numberTexture;
 extern RECT numberRect;
 extern D3DXVECTOR3 numberPosition;
 extern bool showNumber;
+extern std::string font;
+extern LPD3DXLINE line;
+extern  std::vector<D3DXVECTOR2>  lineVertices;
 
 
 
@@ -31,7 +35,7 @@ void trackCursorPosition(LPARAM lParam);
 void selectNumberRect(int selected);
 Sprite* loopSpriteVector(SpriteType spriteType);
 void changeRect(Sprite* sprite, int selectedAreaNumber, int textureRow, int textureColumn);
-
+void drawClock();
 //will try to became a class
 //TextureType getSpriteEnum(int spriteID);
 //LPCSTR getSpriteLocation(TextureType sprite);

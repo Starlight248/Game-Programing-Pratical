@@ -1,1 +1,3 @@
-﻿  Game-Programing-Pratical.vcxproj -> E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\x64\Debug\Game-Programing-Pratical.exe
+﻿  Graphics.cpp
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Graphics.cpp(28,83): warning C4267: 'argument': conversion from 'size_t' to 'INT', possible loss of data
+  Game-Programing-Pratical.vcxproj -> E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\x64\Debug\Game-Programing-Pratical.exe

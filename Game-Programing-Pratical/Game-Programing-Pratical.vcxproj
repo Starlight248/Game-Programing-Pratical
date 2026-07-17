@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="changeRect.cpp" />
     <ClCompile Include="Destroy.cpp" />
+    <ClCompile Include="drawClock.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Initialization.cpp" />
     <ClCompile Include="loopSpriteVector.cpp" />
