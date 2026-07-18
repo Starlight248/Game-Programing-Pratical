@@ -36,9 +36,6 @@
     <ClCompile Include="Sprite.cpp">
       <Filter>Class</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Class</Filter>
-    </ClCompile>
     <ClCompile Include="windowEvent.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
@@ -62,6 +59,12 @@
     </ClCompile>
     <ClCompile Include="drawClock.cpp">
       <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debug.cpp">
+      <Filter>Static Function</Filter>
+    </ClCompile>
+    <ClCompile Include="SheetTexture.cpp">
+      <Filter>Class</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +93,12 @@
       <Filter>Class\ClassHeader</Filter>
     </ClInclude>
     <ClInclude Include="RGBColor.h">
+      <Filter>Class\ClassHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="debug.h">
+      <Filter>Static Function</Filter>
+    </ClInclude>
+    <ClInclude Include="SheetTexture.h">
       <Filter>Class\ClassHeader</Filter>
     </ClInclude>
   </ItemGroup>

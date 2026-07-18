@@ -21,7 +21,7 @@ extern LPDIRECT3DTEXTURE9 numberTexture;
 extern RECT numberRect;
 extern D3DXVECTOR3 numberPosition;
 extern bool showNumber;
-extern std::map <TextureType, Texture>textureType;
+extern std::map <TextureType, Texture*>textureType;
 extern LPD3DXFONT fontBrush;
 extern RECT textRect;
 extern std::string font;

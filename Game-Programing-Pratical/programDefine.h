@@ -8,6 +8,7 @@
 #include "Destroy.h"
 #include <string>
 
+extern bool debug;
 extern HWND g_hWnd;
 extern WNDCLASS wndClass;
 extern IDirect3DDevice9* d3dDevice;
@@ -34,7 +35,7 @@ enum class KeyCode;
 void trackCursorPosition(LPARAM lParam);
 void selectNumberRect(int selected);
 Sprite* loopSpriteVector(SpriteType spriteType);
-void changeRect(Sprite* sprite, int selectedAreaNumber, int textureRow, int textureColumn);
+void changeRect(Sprite* sprite, int selectedAreaNumber);
 void drawClock();
 //will try to became a class
 //TextureType getSpriteEnum(int spriteID);

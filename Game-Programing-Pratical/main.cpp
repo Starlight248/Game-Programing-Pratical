@@ -19,12 +19,14 @@
 
 using namespace std;
 
+bool debug = true;
+
 HWND g_hWnd = NULL; //	Window handle
 WNDCLASS wndClass;
 IDirect3DDevice9* d3dDevice;
 LPD3DXSPRITE spriteBrush;
 RGBColor rgb = RGBColor();
-map<TextureType, Texture> textureType;
+map<TextureType, Texture*> textureType;
 vector<Sprite> sprites = {};
 //vector<Texture> textures = {};
 int totalSprites = static_cast<int>(TextureType::COUNT);

@@ -1,23 +1,2 @@
-﻿  Destroy.cpp
-  Graphics.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Graphics.cpp(28,83): warning C4267: 'argument': conversion from 'size_t' to 'INT', possible loss of data
-  Initialization.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(103,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(104,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(105,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Sprite.cpp
-  Texture.cpp
-  changeRect.cpp
-  drawClock.cpp
-  keyPressed.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\keyPressed.cpp(12,13): warning C4101: 'targetSprite': unreferenced local variable
-  loopSpriteVector.cpp
-  main.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\main.cpp(11,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  trackMouse.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\trackMouse.cpp(25,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\trackMouse.cpp(26,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
-  windowEvent.cpp
-  Generating Code...
+﻿  changeRect.cpp
   Game-Programing-Pratical.vcxproj -> E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\x64\Debug\Game-Programing-Pratical.exe

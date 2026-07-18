@@ -7,20 +7,16 @@ private:
     std::string path;
     const int horizontalPixel;//x
     const int verticalPixel;//y
-    const int textureRow;
-    const int textureColumn;
+
     
 public:
-	Texture() : texture(nullptr), path(""), horizontalPixel(0), verticalPixel(0) , textureRow(0), textureColumn(0){}
-    Texture(LPDIRECT3DTEXTURE9 texture, std::string path, int horizontalPixel, int verticalPixel, int textureRow, int textureColum) : texture(texture), path(path), horizontalPixel(horizontalPixel), verticalPixel(verticalPixel), textureRow(textureRow), textureColumn(textureColum) {};
-    Texture(LPDIRECT3DTEXTURE9 texture, int horizontalPixel, int verticalPixel, int textureRow, int textureColum) :texture(texture), horizontalPixel(horizontalPixel), verticalPixel(verticalPixel), textureRow(textureRow), textureColumn(textureColum) {};
-    Texture(LPDIRECT3DTEXTURE9 texture, std::string path, int horizontalPixel, int verticalPixel) :texture(texture), path(path), horizontalPixel(horizontalPixel), verticalPixel(verticalPixel), textureRow(0), textureColumn(0) {};
-    Texture(LPDIRECT3DTEXTURE9 texture, int horizontalPixel, int verticalPixel) :texture(texture), path(""), horizontalPixel(horizontalPixel), verticalPixel(verticalPixel), textureRow(0), textureColumn(0) {};
+    virtual ~Texture() = default;
+	Texture() : texture(nullptr), path(""), horizontalPixel(0), verticalPixel(0){}
+    Texture(LPDIRECT3DTEXTURE9 texture, std::string path, int horizontalPixel, int verticalPixel) :texture(texture), path(path), horizontalPixel(horizontalPixel), verticalPixel(verticalPixel) {};
+    Texture(LPDIRECT3DTEXTURE9 texture, int horizontalPixel, int verticalPixel) :texture(texture), path(""), horizontalPixel(horizontalPixel), verticalPixel(verticalPixel) {};
 
 
-    int getTextureRow() { return this->textureRow; }
 
-    int getTextureColumn() { return this->textureColumn; }
 
     LPDIRECT3DTEXTURE9 getTexture() { return this->texture; }
 
@@ -38,11 +34,11 @@ public:
     }
 
     void releaseTexture() {
-        if (this->texture != NULL) {
+        if (this->texture != nullptr) {
             this->texture->Release();
-            this->texture = NULL;
+            this->texture = nullptr;
         }
     }
 
-    int getTotalSheetNumber() { return this->textureRow * this->textureColumn; };
+
 };

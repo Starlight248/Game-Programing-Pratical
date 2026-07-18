@@ -25,7 +25,7 @@ void render()
         spriteBrush->Draw(texture, &spriteRect, NULL, &spritePosition, D3DCOLOR_XRGB(255, 255, 255));
         //spriteBrush->Draw(Texture, &spriteRect, NULL, NULL, D3DCOLOR_XRGB(255, 255, 255));
         //spriteBrush->Draw(Texture, &spriteRect, NULL, &D3DXVECTOR3(32, 32, 0), D3DCOLOR_XRGB(255, 255, 255));
-       fontBrush->DrawText(spriteBrush, const_cast<char*>(font.c_str()), font.size(), &textRect, 0, D3DCOLOR_XRGB(255, 255, 255));
+       fontBrush->DrawText(spriteBrush, font.c_str(), font.size(), &textRect, 0, D3DCOLOR_XRGB(255, 255, 255));
        
         //	End spriteBrush drawing
 

@@ -24,6 +24,6 @@ void cleanUpSprite() {
 
 void cleanUpTextures() {
 	for (auto& [textureType, texture] : textureType) {
-		texture.releaseTexture();
+		texture->releaseTexture();
 	}   
 }

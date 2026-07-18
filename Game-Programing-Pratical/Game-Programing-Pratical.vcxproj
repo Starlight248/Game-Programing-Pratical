@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="changeRect.cpp" />
+    <ClCompile Include="debug.cpp" />
     <ClCompile Include="Destroy.cpp" />
     <ClCompile Include="drawClock.cpp" />
     <ClCompile Include="Graphics.cpp" />
@@ -160,18 +161,20 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RGBColor.cpp" />
     <ClCompile Include="keyPressed.cpp" />
+    <ClCompile Include="SheetTexture.cpp" />
     <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="trackMouse.cpp" />
     <ClCompile Include="windowEvent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="debug.h" />
     <ClInclude Include="Destroy.h" />
     <ClInclude Include="enum.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Initialization.h" />
     <ClInclude Include="programDefine.h" />
     <ClInclude Include="RGBColor.h" />
+    <ClInclude Include="SheetTexture.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="windowEvent.h" />

@@ -1,9 +1,12 @@
 #include "Initialization.h"
 #include "windowEvent.h"
 #include <iostream>
+#include "SheetTexture.h"
+#include "Texture.h"
 
 
-void storeTexture(TextureType enumTextureType, std::string location, int width, int height);
+static void storeTexture(TextureType enumTextureType, std::string location, int width, int height);
+static void storeSheetTexture(TextureType enumTextureType, std::string location, int width, int height, int rowNumber, int columnNumber);
 
 void createWindow() {
 
@@ -93,7 +96,7 @@ void loadSprite(
 
 	newSprite.setSpriteType(spriteType);
     
-    newSprite.setTextureAddress(&(textureType[enumTextureType]));
+    newSprite.setTextureAddress((textureType[enumTextureType]));
 
     newSprite.setRectLeft(rectLeft);
     newSprite.setRectRight(rectRight);
@@ -179,11 +182,11 @@ void createTexture()
 {
     storeTexture(TextureType::BG1, "image/bg1.png", 512, 512);
     storeTexture(TextureType::CURSOR, "image/pointer.png", 32, 32);
-	storeTexture(TextureType::NUMBER, "image/numbers.bmp", 128, 128);
+	storeSheetTexture(TextureType::NUMBER, "image/numbers.bmp", 128, 128,4,4);
     
 }
 
-void storeTexture(TextureType enumTextureType, std::string location, int width, int height) {
+static void storeTexture(TextureType enumTextureType, std::string location, int width, int height) {
     LPDIRECT3DTEXTURE9 tempTexture = nullptr;
     HRESULT hr = D3DXCreateTextureFromFile(d3dDevice, location.c_str(), &tempTexture);
     //hr = D3DXCreateTextureFromFileEx(/* Your Direct3D device */, "01.bmp", D3DX_DEFAULT, D3DX_DEFAULT, 
@@ -191,7 +194,24 @@ void storeTexture(TextureType enumTextureType, std::string location, int width, 
     //									D3DX_DEFAULT, D3DX_DEFAULT, D3DCOLOR_XRGB(255, 255, 255), 
     //									NULL, NULL, &texture);
     if (SUCCEEDED(hr)) {
-        Texture tempOfTexture = Texture(tempTexture, location, 32, 32);
+        Texture* tempOfTexture =new Texture(tempTexture, location, width, height);
+        textureType.insert({ enumTextureType ,tempOfTexture });
+    }
+    else {
+        std::cout << "Failed to load texture: " << location << std::endl;
+    }
+}
+
+
+static void storeSheetTexture(TextureType enumTextureType, std::string location, int width, int height, int rowNumber, int columnNumber) {
+    LPDIRECT3DTEXTURE9 tempTexture = nullptr;
+    HRESULT hr = D3DXCreateTextureFromFile(d3dDevice, location.c_str(), &tempTexture);
+    //hr = D3DXCreateTextureFromFileEx(/* Your Direct3D device */, "01.bmp", D3DX_DEFAULT, D3DX_DEFAULT, 
+    //									D3DX_DEFAULT, NULL, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, 
+    //									D3DX_DEFAULT, D3DX_DEFAULT, D3DCOLOR_XRGB(255, 255, 255), 
+    //									NULL, NULL, &texture);
+    if (SUCCEEDED(hr)) {
+        SheetTexture* tempOfTexture = new SheetTexture(tempTexture, location,width,height,rowNumber,columnNumber);
         textureType.insert({ enumTextureType ,tempOfTexture });
     }
     else {
