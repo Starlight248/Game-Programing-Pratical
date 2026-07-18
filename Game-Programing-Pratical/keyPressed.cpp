@@ -19,7 +19,7 @@ void whenKeyPressed(KeyCode pressedKey) {
     //case KeyCode::DOWN_ARROW:   targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->increasePositionY(targetSprite->getSpriteVelocity());break;
     //case KeyCode::RIGHT_ARROW:  targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->increasePositionX(targetSprite->getSpriteVelocity());break;
     //case KeyCode::LEFT_ARROW:   targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->decreasePositionX(targetSprite->getSpriteVelocity());break;
-    case KeyCode::KEY_0:        changeRect(loopSpriteVector(SpriteType::NUM), 1, 4, 4); break;
+    case KeyCode::KEY_0:        changeRect(loopSpriteVector(SpriteType::NUM), 0, 4, 4); break;
     case KeyCode::KEY_1:        changeRect(loopSpriteVector(SpriteType::NUM), 2, 4, 4); break;
     case KeyCode::KEY_2:        changeRect(loopSpriteVector(SpriteType::NUM), 3, 4, 4); break;
     case KeyCode::KEY_3:        changeRect(loopSpriteVector(SpriteType::NUM), 4, 4, 4); break;

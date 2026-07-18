@@ -19,6 +19,9 @@
     <Filter Include="Class\ClassHeader">
       <UniqueIdentifier>{d66a4ed1-b17d-4cbd-afc2-13ee6c274fdd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Static Function">
+      <UniqueIdentifier>{3307e1a4-8ac3-4086-8ce8-3ea928682053}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -62,9 +65,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="RGBColor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="enum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -87,6 +87,9 @@
       <Filter>Class\ClassHeader</Filter>
     </ClInclude>
     <ClInclude Include="Texture.h">
+      <Filter>Class\ClassHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="RGBColor.h">
       <Filter>Class\ClassHeader</Filter>
     </ClInclude>
   </ItemGroup>
