@@ -2,7 +2,7 @@
 #include "Texture.h"
 #include <string>
 
-Sprite::Sprite() :textureAddress(), spriteRect(), spritePosition(), spriteVelocity(0) ,isActive(false){
+Sprite::Sprite() :textureAddress(nullptr), spriteRect(), spritePosition(), spriteVelocity(0), isActive(false) {
 }
 
 Sprite::Sprite(Texture* texture) 

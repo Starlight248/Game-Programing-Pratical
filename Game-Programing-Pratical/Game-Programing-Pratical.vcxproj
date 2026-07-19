@@ -151,7 +151,6 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="changeRect.cpp" />
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="Destroy.cpp" />
     <ClCompile Include="drawClock.cpp" />

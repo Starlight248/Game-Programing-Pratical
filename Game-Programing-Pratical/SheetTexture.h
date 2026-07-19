@@ -1,6 +1,7 @@
 #pragma once
-#include "Texture.h"
 #include <string>
+class Texture;
+
 class SheetTexture :public Texture
 
 {
@@ -17,5 +18,6 @@ class SheetTexture :public Texture
 
 		int getTextureColumn() { return this->textureColumn; }
 
+		void changeRect(Sprite* sprite, int selectedAreaNumber) override;
 };
 
