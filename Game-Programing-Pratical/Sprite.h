@@ -1,7 +1,6 @@
 #pragma once
 
 #include <Windows.h>
-#include "Texture.h"
 #include "enum.h"
 class Texture;
 class Sprite{

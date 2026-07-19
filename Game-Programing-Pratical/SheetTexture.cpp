@@ -4,7 +4,7 @@
 
 static void changeRectCallMessageBox(std::string message) { callMessageBoxA("changeRect.cpp", message); }
 
-void SheetTexture::changeRect(Sprite* sprite, int selectedAreaNumber) {
+void SheetTexture::changeRect(Sprite* sprite, int selectedAreaNumber)  {
 
 	if (selectedAreaNumber == 0) { changeRectCallMessageBox("The selected Number is 0"); return; };
 

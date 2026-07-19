@@ -1,426 +1,73 @@
-﻿  debug.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,12): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'debug.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'debug.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,28): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'debug.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,12): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'debug.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,5): error C2535: 'Sprite::Sprite(void)': member function already defined or declared
-  (compiling source file 'debug.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(16,5):
-      see declaration of 'Sprite::Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,9): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'debug.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'debug.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,31): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-  (compiling source file 'debug.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,28): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'debug.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,61): error C2039: 'textureAddress': is not a member of 'Sprite'
-  (compiling source file 'debug.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
-      see declaration of 'Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,78): error C2065: 'textureAddress': undeclared identifier
-  (compiling source file 'debug.cpp')
-  
-  Destroy.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,12): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Destroy.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Destroy.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,28): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Destroy.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,12): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'Destroy.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,5): error C2535: 'Sprite::Sprite(void)': member function already defined or declared
-  (compiling source file 'Destroy.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(16,5):
-      see declaration of 'Sprite::Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,9): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Destroy.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Destroy.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,31): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-  (compiling source file 'Destroy.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,28): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'Destroy.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,61): error C2039: 'textureAddress': is not a member of 'Sprite'
-  (compiling source file 'Destroy.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
-      see declaration of 'Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,78): error C2065: 'textureAddress': undeclared identifier
-  (compiling source file 'Destroy.cpp')
-  
-  drawClock.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,12): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'drawClock.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'drawClock.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,28): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'drawClock.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,12): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'drawClock.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,5): error C2535: 'Sprite::Sprite(void)': member function already defined or declared
-  (compiling source file 'drawClock.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(16,5):
-      see declaration of 'Sprite::Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,9): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'drawClock.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'drawClock.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,31): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-  (compiling source file 'drawClock.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,28): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'drawClock.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,61): error C2039: 'textureAddress': is not a member of 'Sprite'
-  (compiling source file 'drawClock.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
-      see declaration of 'Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,78): error C2065: 'textureAddress': undeclared identifier
-  (compiling source file 'drawClock.cpp')
-  
-  Graphics.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,12): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Graphics.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Graphics.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,28): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Graphics.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,12): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'Graphics.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,5): error C2535: 'Sprite::Sprite(void)': member function already defined or declared
-  (compiling source file 'Graphics.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(16,5):
-      see declaration of 'Sprite::Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,9): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Graphics.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Graphics.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,31): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-  (compiling source file 'Graphics.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,28): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'Graphics.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,61): error C2039: 'textureAddress': is not a member of 'Sprite'
-  (compiling source file 'Graphics.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
-      see declaration of 'Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,78): error C2065: 'textureAddress': undeclared identifier
-  (compiling source file 'Graphics.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Graphics.cpp(19,54): error C2039: 'getTextureAddress': is not a member of 'Sprite'
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
-      see declaration of 'Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Graphics.cpp(28,64): warning C4267: 'argument': conversion from 'size_t' to 'INT', possible loss of data
-  Initialization.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,12): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Initialization.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Initialization.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,28): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Initialization.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,12): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'Initialization.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,5): error C2535: 'Sprite::Sprite(void)': member function already defined or declared
-  (compiling source file 'Initialization.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(16,5):
-      see declaration of 'Sprite::Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,9): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Initialization.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Initialization.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,31): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-  (compiling source file 'Initialization.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,28): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'Initialization.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,61): error C2039: 'textureAddress': is not a member of 'Sprite'
-  (compiling source file 'Initialization.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
-      see declaration of 'Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,78): error C2065: 'textureAddress': undeclared identifier
-  (compiling source file 'Initialization.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(99,15): error C2660: 'Sprite::setTextureAddress': function does not take 1 arguments
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,10):
-      see declaration of 'Sprite::setTextureAddress'
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(99,15):
-      while trying to match the argument list '(Texture *)'
-  
+﻿  Initialization.cpp
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(106,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(107,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Initialization.cpp(108,25): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  loopSpriteVector.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,12): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'loopSpriteVector.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'loopSpriteVector.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,28): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'loopSpriteVector.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,12): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'loopSpriteVector.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,5): error C2535: 'Sprite::Sprite(void)': member function already defined or declared
-  (compiling source file 'loopSpriteVector.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(16,5):
-      see declaration of 'Sprite::Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,9): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'loopSpriteVector.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'loopSpriteVector.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,31): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-  (compiling source file 'loopSpriteVector.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,28): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'loopSpriteVector.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,61): error C2039: 'textureAddress': is not a member of 'Sprite'
-  (compiling source file 'loopSpriteVector.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
-      see declaration of 'Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,78): error C2065: 'textureAddress': undeclared identifier
-  (compiling source file 'loopSpriteVector.cpp')
-  
-  keyPressed.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,12): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'keyPressed.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'keyPressed.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,28): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'keyPressed.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,12): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'keyPressed.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,5): error C2535: 'Sprite::Sprite(void)': member function already defined or declared
-  (compiling source file 'keyPressed.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(16,5):
-      see declaration of 'Sprite::Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,9): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'keyPressed.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'keyPressed.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,31): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-  (compiling source file 'keyPressed.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,28): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'keyPressed.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,61): error C2039: 'textureAddress': is not a member of 'Sprite'
-  (compiling source file 'keyPressed.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
-      see declaration of 'Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,78): error C2065: 'textureAddress': undeclared identifier
-  (compiling source file 'keyPressed.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\keyPressed.cpp(22,68): error C2039: 'getTextureAddress': is not a member of 'Sprite'
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
-      see declaration of 'Sprite'
-  
   SheetTexture.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(5,28): error C2504: 'Texture': base class undefined
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(12,16): error C2061: syntax error: identifier 'LPDIRECT3DTEXTURE9'
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(13,16): error C2061: syntax error: identifier 'LPDIRECT3DTEXTURE9'
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(13,3): error C2535: 'SheetTexture::SheetTexture(void)': member function already defined or declared
-  (compiling source file 'SheetTexture.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(12,3):
-      see declaration of 'SheetTexture::SheetTexture'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(21,19): error C2061: syntax error: identifier 'Sprite'
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(21,8): error C3668: 'SheetTexture::changeRect': method with override specifier 'override' did not override any base class methods
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(12,146): error C2065: 'texture': undeclared identifier
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(12,154): error C2065: 'path': undeclared identifier
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(12,159): error C2065: 'horizontalPixel': undeclared identifier
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(12,175): error C2065: 'verticalPixel': undeclared identifier
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(12,229): error C2065: 'textureColum': undeclared identifier
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(12,138): error C2614: 'SheetTexture': illegal member initialization: 'Texture' is not a base or member
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(13,128): error C2065: 'texture': undeclared identifier
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(13,137): error C2065: 'horizontalPixel': undeclared identifier
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(13,154): error C2065: 'verticalPixel': undeclared identifier
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(13,208): error C2065: 'textureColum': undeclared identifier
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(13,120): error C2614: 'SheetTexture': illegal member initialization: 'Texture' is not a base or member
-  (compiling source file 'SheetTexture.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.cpp(7,20): error C2511: 'void SheetTexture::changeRect(Sprite *,int)': overloaded member function not found in 'SheetTexture'
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.h(5,7):
-      see declaration of 'SheetTexture'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.cpp(11,19): error C2671: 'SheetTexture::changeRect': static member functions do not have 'this' pointers
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.cpp(12,22): error C2671: 'SheetTexture::changeRect': static member functions do not have 'this' pointers
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.cpp(16,24): error C2671: 'SheetTexture::changeRect': static member functions do not have 'this' pointers
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\SheetTexture.cpp(17,22): error C2671: 'SheetTexture::changeRect': static member functions do not have 'this' pointers
   Sprite.cpp
-  trackMouse.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,12): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'trackMouse.cpp')
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(12,17): error C3646: 'spritePosition': unknown override specifier
+  (compiling source file 'Sprite.cpp')
   
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'trackMouse.cpp')
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(12,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+  (compiling source file 'Sprite.cpp')
   
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,28): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'trackMouse.cpp')
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(30,17): error C3646: 'getSpritePosition': unknown override specifier
+  (compiling source file 'Sprite.cpp')
   
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,12): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'trackMouse.cpp')
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(30,34): error C2059: syntax error: '('
+  (compiling source file 'Sprite.cpp')
   
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,5): error C2535: 'Sprite::Sprite(void)': member function already defined or declared
-  (compiling source file 'trackMouse.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(16,5):
-      see declaration of 'Sprite::Sprite'
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(30,37): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+  (compiling source file 'Sprite.cpp')
   
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,9): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'trackMouse.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'trackMouse.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,31): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-  (compiling source file 'trackMouse.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,28): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'trackMouse.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,61): error C2039: 'textureAddress': is not a member of 'Sprite'
-  (compiling source file 'trackMouse.cpp')
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(44,40): error C2039: 'spritePosition': is not a member of 'Sprite'
+  (compiling source file 'Sprite.cpp')
       E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
       see declaration of 'Sprite'
   
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,78): error C2065: 'textureAddress': undeclared identifier
-  (compiling source file 'trackMouse.cpp')
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(46,45): error C2039: 'spritePosition': is not a member of 'Sprite'
+  (compiling source file 'Sprite.cpp')
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
+      see declaration of 'Sprite'
   
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(48,45): error C2039: 'spritePosition': is not a member of 'Sprite'
+  (compiling source file 'Sprite.cpp')
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
+      see declaration of 'Sprite'
+  
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(50,40): error C2039: 'spritePosition': is not a member of 'Sprite'
+  (compiling source file 'Sprite.cpp')
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
+      see declaration of 'Sprite'
+  
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(52,45): error C2039: 'spritePosition': is not a member of 'Sprite'
+  (compiling source file 'Sprite.cpp')
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
+      see declaration of 'Sprite'
+  
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(54,45): error C2039: 'spritePosition': is not a member of 'Sprite'
+  (compiling source file 'Sprite.cpp')
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
+      see declaration of 'Sprite'
+  
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(56,40): error C2039: 'spritePosition': is not a member of 'Sprite'
+  (compiling source file 'Sprite.cpp')
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
+      see declaration of 'Sprite'
+  
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(58,45): error C2039: 'spritePosition': is not a member of 'Sprite'
+  (compiling source file 'Sprite.cpp')
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
+      see declaration of 'Sprite'
+  
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(60,45): error C2039: 'spritePosition': is not a member of 'Sprite'
+  (compiling source file 'Sprite.cpp')
+      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
+      see declaration of 'Sprite'
+  
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.cpp(5,58): error C2614: 'Sprite': illegal member initialization: 'spritePosition' is not a base or member
+E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.cpp(9,41): error C2614: 'Sprite': illegal member initialization: 'spritePosition' is not a base or member
+  trackMouse.cpp
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\trackMouse.cpp(25,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
 E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\trackMouse.cpp(26,39): warning C4244: 'argument': conversion from 'LONG' to 'float', possible loss of data
   windowEvent.cpp
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,12): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'windowEvent.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,5): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'windowEvent.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(10,28): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'windowEvent.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,12): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'windowEvent.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(17,5): error C2535: 'Sprite::Sprite(void)': member function already defined or declared
-  (compiling source file 'windowEvent.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(16,5):
-      see declaration of 'Sprite::Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,9): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'windowEvent.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,2): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'windowEvent.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(20,31): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
-  (compiling source file 'windowEvent.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,28): error C2061: syntax error: identifier 'Texture'
-  (compiling source file 'windowEvent.cpp')
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,61): error C2039: 'textureAddress': is not a member of 'Sprite'
-  (compiling source file 'windowEvent.cpp')
-      E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(6,7):
-      see declaration of 'Sprite'
-  
-E:\yonga\Documents\Game-Programing-Pratical\Game-Programing-Pratical\Game-Programing-Pratical\Sprite.h(26,78): error C2065: 'textureAddress': undeclared identifier
-  (compiling source file 'windowEvent.cpp')
-  
   Generating Code...

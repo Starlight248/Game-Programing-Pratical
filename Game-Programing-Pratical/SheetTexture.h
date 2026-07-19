@@ -1,7 +1,8 @@
 #pragma once
 #include <string>
+#include "Texture.h"
+class Sprite;
 class Texture;
-
 class SheetTexture :public Texture
 
 {

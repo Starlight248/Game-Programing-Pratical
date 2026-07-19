@@ -2,7 +2,6 @@
 #include <d3dx9.h>
 #include <string>
 #include <Windows.h>
-#include "Sprite.h"
 
 class Sprite;
 class Texture {
