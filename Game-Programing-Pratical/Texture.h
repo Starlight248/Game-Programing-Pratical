@@ -18,7 +18,7 @@ public:
     Texture(LPDIRECT3DTEXTURE9 texture, std::string path, int horizontalPixel, int verticalPixel) :texture(texture), path(path), horizontalPixel(horizontalPixel), verticalPixel(verticalPixel) {};
     Texture(LPDIRECT3DTEXTURE9 texture, int horizontalPixel, int verticalPixel) :texture(texture), path(""), horizontalPixel(horizontalPixel), verticalPixel(verticalPixel) {};
 
-    virtual void changeRect(Sprite* sprite, int selectedAreaNumber) { return; };
+    virtual void selectSheetArea(Sprite* sprite, int selectedAreaNumber) { return; };
 
 
     LPDIRECT3DTEXTURE9 getTexture() { return this->texture; }

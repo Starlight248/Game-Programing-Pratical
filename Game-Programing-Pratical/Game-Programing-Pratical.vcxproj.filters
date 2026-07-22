@@ -19,7 +19,7 @@
     <Filter Include="Class\ClassHeader">
       <UniqueIdentifier>{d66a4ed1-b17d-4cbd-afc2-13ee6c274fdd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Static Function">
+    <Filter Include="Inline Function">
       <UniqueIdentifier>{3307e1a4-8ac3-4086-8ce8-3ea928682053}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -51,23 +51,23 @@
     <ClCompile Include="Graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="loopSpriteVector.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
     <ClCompile Include="drawClock.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="debug.cpp">
-      <Filter>Static Function</Filter>
+      <Filter>Inline Function</Filter>
     </ClCompile>
     <ClCompile Include="SheetTexture.cpp">
       <Filter>Class</Filter>
     </ClCompile>
+    <ClCompile Include="programDefine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getInput.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="enum.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="programDefine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -93,10 +93,16 @@
       <Filter>Class\ClassHeader</Filter>
     </ClInclude>
     <ClInclude Include="debug.h">
-      <Filter>Static Function</Filter>
+      <Filter>Inline Function</Filter>
     </ClInclude>
     <ClInclude Include="SheetTexture.h">
       <Filter>Class\ClassHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="enum.h">
+      <Filter>Class\ClassHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="getInput.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

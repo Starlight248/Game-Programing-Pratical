@@ -7,8 +7,10 @@
 #include "Sprite.h"
 #include "Destroy.h"
 #include <string>
+#include <queue>
+#include <queue>
 
-extern bool debug;
+extern const bool debug;
 extern HWND g_hWnd;
 extern WNDCLASS wndClass;
 extern IDirect3DDevice9* d3dDevice;
@@ -23,18 +25,22 @@ extern RECT numberRect;
 extern D3DXVECTOR3 numberPosition;
 extern bool showNumber;
 extern std::string font;
-extern LPD3DXLINE line;
-extern  std::vector<D3DXVECTOR2>  lineVertices;
+extern LPD3DXLINE lineBrush;
+extern D3DXVECTOR2  lineVertices[];
+extern std::queue<KeyCodeWindowInput> keyPressedWin;
+extern RECT textRect;
+extern std::string font;
+extern LPD3DXLINE lineBrush;
+//	Define the line vertices.
 
 
+void whenKeyPressed(std::queue<KeyCodeWindowInput> &keyPressedWin);
 
-void whenKeyPressed(KeyCode pressedKey);
 
-
-enum class KeyCode;
+enum class KeyCodeWindowInput;
 void trackCursorPosition(LPARAM lParam);
-Sprite* loopSpriteVector(SpriteType spriteType);
-void drawClock();
+Sprite* getSpriteFromVector(SpriteType spriteType);
+void drawClock(LPD3DXLINE lineBrush, int totalLine);
 //will try to became a class
 //TextureType getSpriteEnum(int spriteID);
 //LPCSTR getSpriteLocation(TextureType sprite);

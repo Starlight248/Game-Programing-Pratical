@@ -30,18 +30,18 @@ void render()
         //	End spriteBrush drawing
 
     }
-    spriteBrush->Draw(numberTexture, &numberRect, NULL, &numberPosition, D3DCOLOR_XRGB(255, 255, 255));
+    //spriteBrush->Draw(numberTexture, &numberRect, NULL, &numberPosition, D3DCOLOR_XRGB(255, 255, 255));
     spriteBrush->End();
 
     {
       
         //	Begin to draw the lines.
-        line->Begin();
+        lineBrush->Begin();
         
-            line->Draw(lineVertices.data(), 2, D3DCOLOR_XRGB(255, 255, 255));
-        
+            //lineBrush->Draw(lineVertices, 2, D3DCOLOR_XRGB(255, 255, 255));
+            drawClock(lineBrush,12);
        
-        line->End();
+        lineBrush->End();
     }
 
     //	End the scene

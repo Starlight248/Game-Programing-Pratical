@@ -154,9 +154,10 @@
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="Destroy.cpp" />
     <ClCompile Include="drawClock.cpp" />
+    <ClCompile Include="getInput.cpp" />
+    <ClCompile Include="programDefine.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Initialization.cpp" />
-    <ClCompile Include="loopSpriteVector.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RGBColor.cpp" />
     <ClCompile Include="keyPressed.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="debug.h" />
     <ClInclude Include="Destroy.h" />
     <ClInclude Include="enum.h" />
+    <ClInclude Include="getInput.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Initialization.h" />
     <ClInclude Include="programDefine.h" />

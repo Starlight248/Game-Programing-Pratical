@@ -6,30 +6,33 @@
 #include "enum.h"
 #include "Sprite.h"
 #include "RGBColor.h"
+#include <queue>
 
 
-void whenKeyPressed(KeyCode pressedKey) {
-    Sprite* targetSprite;
-    switch (pressedKey) {
-    //case KeyCode::ESCAPE:       PostQuitMessage(0);break;
-    //case KeyCode::KEY_R:        rgb.changeRed(10);break;
-    //case KeyCode::KEY_B:        rgb.changeBlue(10);break;
-    //case KeyCode::KEY_G:        rgb.changeGreen(10);break;
-    //case KeyCode::UP_ARROW:     targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->decreasePositionY(targetSprite->getSpriteVelocity());break;
-    //case KeyCode::DOWN_ARROW:   targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->increasePositionY(targetSprite->getSpriteVelocity());break;
-    //case KeyCode::RIGHT_ARROW:  targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->increasePositionX(targetSprite->getSpriteVelocity());break;
-    //case KeyCode::LEFT_ARROW:   targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->decreasePositionX(targetSprite->getSpriteVelocity());break;
-    case KeyCode::KEY_0:        loopSpriteVector(SpriteType::NUM)->getTextureAddress()->changeRect(loopSpriteVector(SpriteType::NUM),0); break;
-    //case KeyCode::KEY_1:        changeRect(loopSpriteVector(SpriteType::NUM), 2); break;
-    //case KeyCode::KEY_2:        changeRect(loopSpriteVector(SpriteType::NUM), 3); break;
-    //case KeyCode::KEY_3:        changeRect(loopSpriteVector(SpriteType::NUM), 4); break;
-    //case KeyCode::KEY_4:        changeRect(loopSpriteVector(SpriteType::NUM), 5); break;
-    //case KeyCode::KEY_5:        changeRect(loopSpriteVector(SpriteType::NUM), 6); break;
-    //case KeyCode::KEY_6:        changeRect(loopSpriteVector(SpriteType::NUM), 7); break;
-    //case KeyCode::KEY_7:        changeRect(loopSpriteVector(SpriteType::NUM), 8); break;
-    //case KeyCode::KEY_8:        changeRect(loopSpriteVector(SpriteType::NUM), 9); break;
-    //case KeyCode::KEY_9:        changeRect(loopSpriteVector(SpriteType::NUM), 10); break;
+void whenKeyPressed(std::queue<KeyCodeWindowInput> &keyPressedWin) {
+    while(!keyPressedWin.empty()) {
+        switch (keyPressedWin.front()) {
+            //case KeyCodeWindowInput::ESCAPE:       PostQuitMessage(0);break;
+            //case KeyCodeWindowInput::KEY_R:        rgb.changeRed(10);break;
+            //case KeyCodeWindowInput::KEY_B:        rgb.changeBlue(10);break;
+            //case KeyCodeWindowInput::KEY_G:        rgb.changeGreen(10);break;
+            //case KeyCodeWindowInput::UP_ARROW:     targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->decreasePositionY(targetSprite->getSpriteVelocity());break;
+            //case KeyCodeWindowInput::DOWN_ARROW:   targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->increasePositionY(targetSprite->getSpriteVelocity());break;
+            //case KeyCodeWindowInput::RIGHT_ARROW:  targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->increasePositionX(targetSprite->getSpriteVelocity());break;
+            //case KeyCodeWindowInput::LEFT_ARROW:   targetSprite = &sprites.at(getSpriteID(TextureType::BG1));targetSprite->decreasePositionX(targetSprite->getSpriteVelocity());break;
+        case KeyCodeWindowInput::KEY_0:        getSpriteFromVector(SpriteType::NUM)->getTextureAddress()->selectSheetArea(getSpriteFromVector(SpriteType::NUM), 0); break;
+        case KeyCodeWindowInput::KEY_1:         getSpriteFromVector(SpriteType::NUM)->getTextureAddress()->selectSheetArea(getSpriteFromVector(SpriteType::NUM), 1); break;
+        case KeyCodeWindowInput::KEY_2:         getSpriteFromVector(SpriteType::NUM)->getTextureAddress()->selectSheetArea(getSpriteFromVector(SpriteType::NUM), 2); break;
+            //case KeyCodeWindowInput::KEY_3:        selectSheetArea(getSpriteFromVector(SpriteType::NUM), 4); break;
+            //case KeyCodeWindowInput::KEY_4:        selectSheetArea(getSpriteFromVector(SpriteType::NUM), 5); break;
+            //case KeyCodeWindowInput::KEY_5:        selectSheetArea(getSpriteFromVector(SpriteType::NUM), 6); break;
+            //case KeyCodeWindowInput::KEY_6:        selectSheetArea(getSpriteFromVector(SpriteType::NUM), 7); break;
+            //case KeyCodeWindowInput::KEY_7:        selectSheetArea(getSpriteFromVector(SpriteType::NUM), 8); break;
+            //case KeyCodeWindowInput::KEY_8:        selectSheetArea(getSpriteFromVector(SpriteType::NUM), 9); break;
+            //case KeyCodeWindowInput::KEY_9:        selectSheetArea(getSpriteFromVector(SpriteType::NUM), 10); break;
 
+        }
+        keyPressedWin.pop();
+        
     }
-
 }

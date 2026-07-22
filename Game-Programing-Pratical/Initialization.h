@@ -31,5 +31,7 @@ bool createDirectX();
 void createWindow();
 void createSprite();
 void createTexture();
+void createFont();
+
 
 

@@ -1,6 +1,6 @@
 #pragma once
 #include <Windows.h>
-enum class KeyCode
+enum class KeyCodeWindowInput
 {
     LEFT_MOUSE_BUTTON = 0x01,
     RIGHT_MOUSE_BUTTON = 0x02,

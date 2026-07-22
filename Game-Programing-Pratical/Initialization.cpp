@@ -3,7 +3,7 @@
 #include <iostream>
 #include "SheetTexture.h"
 #include "Texture.h"
-
+#include "programDefine.h"
 
 static void storeTexture(TextureType enumTextureType, std::string location, int width, int height);
 static void storeSheetTexture(TextureType enumTextureType, std::string location, int width, int height, int rowNumber, int columnNumber);
@@ -132,15 +132,12 @@ void createSprite() {
         //TextureType sprite = getSpriteEnum(i);
         //LPDIRECT3DTEXTURE9 tempTexture = NULL;
         //LPCSTR location = getSpriteLocation(sprite);
-
-
         ////	Create Texture. Study the documentation.
         //hr = D3DXCreateTextureFromFile(d3dDevice, location, &tempTexture);
         ////hr = D3DXCreateTextureFromFileEx(/* Your Direct3D device */, "01.bmp", D3DX_DEFAULT, D3DX_DEFAULT, 
         ////									D3DX_DEFAULT, NULL, D3DFMT_A8R8G8B8, D3DPOOL_MANAGED, 
         ////									D3DX_DEFAULT, D3DX_DEFAULT, D3DCOLOR_XRGB(255, 255, 255), 
         ////									NULL, NULL, &Texture);
-
         ////	Specify the "	" rectangle.
         //newSprite.setTexture(tempTexture);
         //if (getSpriteID(TextureType::BG1) == i)
@@ -149,11 +146,9 @@ void createSprite() {
         //    newSprite.setRectRight(107);
         //    newSprite.setRectTop(157);
         //    newSprite.setRectBottom(201);
-
         //    newSprite.setPositionX(100);
         //    newSprite.setPositionY(100);
         //    newSprite.setPositionZ(0);
-
         //    newSprite.setSpriteVelocity(5);
         //}
         //else if (getSpriteID(TextureType::CURSOR) == i) {
@@ -161,14 +156,12 @@ void createSprite() {
         //    newSprite.setRectRight(24);
         //    newSprite.setRectTop(0);
         //    newSprite.setRectBottom(24);
-
         //    newSprite.setPositionX(100);
         //    newSprite.setPositionY(100);
         //    newSprite.setPositionZ(0);
         //}
         //sprites.push_back(newSprite);
     ////}
-
     //hr = D3DXCreateTextureFromFile(d3dDevice, "image/numbers.bmp", &numberTexture);
     //numberPosition.x = 300;
     //numberPosition.y = 400;
@@ -217,4 +210,17 @@ static void storeSheetTexture(TextureType enumTextureType, std::string location,
     else {
         std::cout << "Failed to load texture: " << location << std::endl;
     }
+}
+
+void createFont() {
+    {
+        //	Create font. Study the documentation.
+        HRESULT hr = D3DXCreateFont(d3dDevice, 25, 0, 0, 1, false,
+            DEFAULT_CHARSET, OUT_TT_ONLY_PRECIS, DEFAULT_QUALITY,
+            DEFAULT_PITCH | FF_DONTCARE, "Arial", &fontBrush);
+        //	Create lineBrush
+        hr = D3DXCreateLine(d3dDevice, &lineBrush);
+        
+    }
+
 }

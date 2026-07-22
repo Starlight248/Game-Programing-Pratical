@@ -6,6 +6,7 @@
 #include <d3dx9.h>
 #include <vector>
 #include <map>
+#include <queue>
 
 #include "enum.h";
 #include "RGBColor.h";
@@ -16,18 +17,23 @@
 #include "Destroy.h"
 #include "Initialization.h"
 #include "Graphics.h"
+#include <string>
 
 using namespace std;
 
-bool debug = true;
+const bool debug = true;
+
+LPD3DXSPRITE spriteBrush;
+LPD3DXFONT fontBrush = NULL;
 
 HWND g_hWnd = NULL; //	Window handle
 WNDCLASS wndClass;
 IDirect3DDevice9* d3dDevice;
-LPD3DXSPRITE spriteBrush;
+
 RGBColor rgb = RGBColor();
 map<TextureType, Texture*> textureType;
 vector<Sprite> sprites = {};
+queue<KeyCodeWindowInput> keyPressedWin = {};
 //vector<Texture> textures = {};
 int totalSprites = static_cast<int>(TextureType::COUNT);
 POINT CursorPosition;
@@ -36,12 +42,12 @@ RECT numberRect;
 D3DXVECTOR3 numberPosition;
 bool showNumber = false;
 
-    LPD3DXFONT fontBrush = NULL;
+
     RECT textRect;
-    string font = "";
-    LPD3DXLINE line = NULL;
+    std::string font = "";
+    LPD3DXLINE lineBrush = NULL;
     //	Define the line vertices.
-    vector<D3DXVECTOR2> lineVertices;
+    D3DXVECTOR2 lineVertices[2];
 
 
 //	use int main if you want to have a console to print out message
@@ -55,6 +61,7 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
     bool isDirectXCreated = createDirectX();
     createTexture();
     createSprite();
+    createFont();
 
     {
         textRect.left = 0;
@@ -63,15 +70,7 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
         textRect.bottom = 500;
     }
     
-    {
-        //	Create font. Study the documentation.
-        HRESULT hr = D3DXCreateFont(d3dDevice, 25, 0, 0, 1, false,
-            DEFAULT_CHARSET, OUT_TT_ONLY_PRECIS, DEFAULT_QUALITY,
-            DEFAULT_PITCH | FF_DONTCARE, "Arial", &fontBrush);
-        //	Create line
-        hr = D3DXCreateLine(d3dDevice, &line);
-        drawClock();
-    }
+
 
 
     //TODO
