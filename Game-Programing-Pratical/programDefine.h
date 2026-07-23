@@ -8,7 +8,6 @@
 #include "Destroy.h"
 #include <string>
 #include <queue>
-#include <queue>
 
 extern const bool debug;
 extern HWND g_hWnd;
@@ -32,6 +31,8 @@ extern RECT textRect;
 extern std::string font;
 extern LPD3DXLINE lineBrush;
 //	Define the line vertices.
+
+extern BYTE diMouse[256];
 
 
 void whenKeyPressed(std::queue<KeyCodeWindowInput> &keyPressedWin);

@@ -7,6 +7,7 @@
 #include <vector>
 #include <map>
 #include <queue>
+#include <dinput.h>
 
 #include "enum.h";
 #include "RGBColor.h";
@@ -18,6 +19,12 @@
 #include "Initialization.h"
 #include "Graphics.h"
 #include <string>
+#include "debug.h"
+
+#pragma comment (lib, "d3d9.lib")
+#pragma comment (lib, "d3dx9.lib")
+#pragma comment (lib, "dinput8.lib")
+#pragma comment (lib, "dxguid.lib")
 
 using namespace std;
 
@@ -48,13 +55,19 @@ bool showNumber = false;
     LPD3DXLINE lineBrush = NULL;
     //	Define the line vertices.
     D3DXVECTOR2 lineVertices[2];
+    LPDIRECTINPUT8 dInput;
+    LPDIRECTINPUTDEVICE8  dInputKeyboardDevice;
+    LPDIRECTINPUTDEVICE8  dInputMouseDevice;
+    //	Key input buffer
+    BYTE  diKeys[256];
+    BYTE  diMouse[256];
 
 
 //	use int main if you want to have a console to print out message
 //int main()
-//	use WinMain if you don't want the console
+//	use WINAPI WinMain if you don't want the console
                     //ID Nunber,		obs ID number of parent, command line parameter,
-int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
 
     createWindow();
@@ -62,6 +75,7 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
     createTexture();
     createSprite();
     createFont();
+    createDinput();
 
     {
         textRect.left = 0;
@@ -81,6 +95,15 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
         //Game->Physics()
         //Game->render()
         //	Clear and begin scene
+                //	Get immediate Keyboard Data.
+        dInputKeyboardDevice->GetDeviceState(256, diKeys);
+        dInputMouseDevice->GetDeviceState(256, diMouse);
+        if (diKeys[DIK_UP] & 0x80)
+        {
+            if (diKeys[DIK_UP] & 0x80);
+            callMessageBoxA("main.cpp", "clicked UP");
+            
+        }
 
   
         
@@ -92,6 +115,7 @@ int main(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nSho
     cleanUpTextures();
     cleanUpWindow();
     cleanUpDirectX();
+    cleanUpDinput();
     //
     {
         fontBrush->Release();

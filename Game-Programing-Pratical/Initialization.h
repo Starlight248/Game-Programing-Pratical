@@ -7,6 +7,7 @@
 #include "Sprite.h"
 #include <map>
 #include <string>
+#include <dinput.h>
 
 extern HWND g_hWnd;
 extern WNDCLASS wndClass;
@@ -25,6 +26,9 @@ extern std::map <TextureType, Texture*>textureType;
 extern LPD3DXFONT fontBrush;
 extern RECT textRect;
 extern std::string font;
+extern LPDIRECTINPUT8 dInput;
+extern LPDIRECTINPUTDEVICE8  dInputKeyboardDevice;
+extern LPDIRECTINPUTDEVICE8  dInputMouseDevice;
 
 
 bool createDirectX();
@@ -32,6 +36,7 @@ void createWindow();
 void createSprite();
 void createTexture();
 void createFont();
+void createDinput();
 
 
 

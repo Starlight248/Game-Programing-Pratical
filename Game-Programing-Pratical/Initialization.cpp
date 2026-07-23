@@ -224,3 +224,54 @@ void createFont() {
     }
 
 }
+
+void createDinput() {
+    //	Create the Direct Input object.
+    HRESULT hr = DirectInput8Create(GetModuleHandle(NULL), 0x0800, IID_IDirectInput8, (void**)&dInput, NULL);
+
+    //	Create the keyboard device.
+    hr = dInput->CreateDevice(GUID_SysKeyboard, &dInputKeyboardDevice, NULL);
+
+    //	Set the input data format.
+    dInputKeyboardDevice->SetDataFormat(&c_dfDIKeyboard);
+
+    //	Set the cooperative level.
+    //	To Do:
+    //	Try with different combination.
+    dInputKeyboardDevice->SetCooperativeLevel(g_hWnd, DISCL_FOREGROUND | DISCL_NONEXCLUSIVE);
+
+
+    //	Create the keyboard device.
+    hr = dInput->CreateDevice(GUID_SysMouse, &dInputMouseDevice, NULL);
+
+    //	Set the input data format.
+    dInputMouseDevice->SetDataFormat(&c_dfDIMouse);
+
+    //	Set the cooperative level.
+    //	To Do:
+    //	Try with different combination.
+    dInputMouseDevice->SetCooperativeLevel(g_hWnd, DISCL_FOREGROUND | DISCL_NONEXCLUSIVE);
+
+
+    /*---
+        For buffered data
+        //	Define buffer for input.
+        //const int DEVICE_BUFFER_SIZE = 4;
+        //DIDEVICEOBJECTDATA deviceBuffer[DEVICE_BUFFER_SIZE];
+
+        ////	Set the event buffer / properties.
+        //DIPROPDWORD dipdw;
+        //dipdw.diph.dwSize = sizeof(DIPROPDWORD);
+        //dipdw.diph.dwHeaderSize = sizeof(DIPROPHEADER);
+        //dipdw.diph.dwObj = 0;
+        //dipdw.diph.dwHow = DIPH_DEVICE;
+        //dipdw.dwData = DEVICE_BUFFER_SIZE;
+
+        //hr = dInputKeyboardDevice->SetProperty(DIPROP_BUFFERSIZE, &dipdw.diph);
+
+    ---*/
+
+    //	Acquire the device.
+    dInputKeyboardDevice->Acquire();
+    dInputMouseDevice->Acquire();
+};

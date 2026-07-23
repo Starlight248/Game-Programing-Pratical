@@ -26,4 +26,21 @@ void cleanUpTextures() {
 	for (auto& [textureType, texture] : textureType) {
 		texture->releaseTexture();
 	}   
+
+}
+
+void cleanUpDinput() {
+    //	Release keyboard device.
+    dInputKeyboardDevice->Unacquire();
+    dInputKeyboardDevice->Release();
+    dInputKeyboardDevice = NULL;
+    dInputMouseDevice->Unacquire();
+    dInputMouseDevice->Release();
+    dInputMouseDevice = NULL;
+    //	Release DirectInput.
+    dInput->Release();
+    dInput = NULL;
+
+    
+
 }
